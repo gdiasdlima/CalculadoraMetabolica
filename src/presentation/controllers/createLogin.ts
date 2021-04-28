@@ -1,8 +1,8 @@
-import { Validator } from '../../../validation/Validator';
 import { Controller } from '../contracts/controller'
 import { HttpRequest, HttpResponse } from '../contracts/http';
 import { badRequest, success, serverError } from '../contracts/httpHelper'
 import { CreateLoginUseCase } from '../../domain/useCases/createLoginUseCase';
+import { Validator } from '../../validation/validator';
 
 export class CreateLoginController implements Controller {
     constructor(
