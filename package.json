@@ -1,0 +1,30 @@
+{
+  "name": "CalculadoraMetabolica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdiasdlima/CalculadoraMetabolica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdiasdlima/CalculadoraMetabolica/issues"
+  },
+  "homepage": "https://github.com/gdiasdlima/CalculadoraMetabolica#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "ts-node-dev": "^1.1.6",
+    "typeorm": "^0.2.32",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1"
+  }
+}
