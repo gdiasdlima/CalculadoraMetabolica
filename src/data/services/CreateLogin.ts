@@ -1,5 +1,6 @@
 
 import { Login } from "../../domain/models/login";
+import { AlreadyExistsError } from "../../presentation/errors/alreadyExistsError";
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
 import { LoginModel } from "../models/login";
@@ -11,7 +12,7 @@ export class CreateLoginService implements CreateLoginService {
         private readonly loginRepository: ILoginRepository
     ) { }
 
-    async create(data: Login): Promise<Login> {
+    async create(data: Login): Promise<any> {
 
         const alreadyLogin = await this.loginRepository.findByEmail(data.email);
 
