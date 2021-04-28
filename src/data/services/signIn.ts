@@ -1,4 +1,6 @@
 import { SignInRequestModel } from "../../domain/models/signInRequestModel";
+import { SignInUseCase } from "../../domain/useCases/signInUseCase";
+import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
 
