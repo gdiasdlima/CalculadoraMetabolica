@@ -23,6 +23,9 @@ export class SignInService implements SignInUseCase {
         if (!await this.cryptProvider.compare(data.senha, alreadyLogin.senha)) {
             return new UnauthorizedError();
         }
+        alreadyLogin.data_ultimo_acesso = new Date()
+
+        await this.loginRepository.update(alreadyLogin);
 
         return alreadyLogin 
 

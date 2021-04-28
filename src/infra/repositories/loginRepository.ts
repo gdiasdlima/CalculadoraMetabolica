@@ -18,4 +18,12 @@ export class LoginRepository implements ILoginRepository {
 
         return login;
     }
+
+    async update(login: LoginModel): Promise<void> {
+        const loginRepository = getRepository(LoginModel);
+
+        const { id } = login
+
+        await loginRepository.update({ id }, login)
+    }
 }
