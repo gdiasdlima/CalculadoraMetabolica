@@ -6,9 +6,16 @@ import { Login } from "../../domain/models/login";
 export class LoginRepository implements ILoginRepository {
 
 
-    async create(user: Login): Promise<Login>{
+    async create(user: Login): Promise<LoginModel>{
         const userRepository = getRepository(LoginModel)
     
         return await userRepository.save(user)
+    }
+    
+    async findByEmail(email: string): Promise<LoginModel> {
+        const loginRepository = getRepository(LoginModel);
+        const login = await loginRepository.findOne({ where: { email } });
+
+        return login;
     }
 }

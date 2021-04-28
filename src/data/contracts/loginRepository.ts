@@ -1,5 +1,6 @@
-import { Login } from "../models/login";
+import { LoginModel } from "../models/login";
 
 export interface ILoginRepository {
-    create(user: Login): Promise<Login>
+    create(user: LoginModel): Promise<LoginModel>
+    findByEmail(email : string) : Promise<LoginModel>;
 }
