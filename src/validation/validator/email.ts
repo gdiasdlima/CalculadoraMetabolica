@@ -1,5 +1,6 @@
 import { Validator } from '../validator'
 import validator from 'validator'
+import { InvalidParamError } from '../../presentation/errors/invalidParamError'
 
 export class EmailValidator implements Validator {
     constructor(private readonly field: string) { }

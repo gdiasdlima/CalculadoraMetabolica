@@ -23,6 +23,7 @@ export class CreateLoginService implements CreateLoginService {
         login.data_alteracao = new Date()
         login.telefone = data.telefone
 
+        console.log(login)
         return await this.loginRepository.create(login)
     }
 }
