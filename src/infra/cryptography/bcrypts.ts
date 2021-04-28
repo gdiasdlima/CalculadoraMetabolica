@@ -9,4 +9,8 @@ export class Bcrypt implements Encrypter {
     async encrypt(string: string): Promise<string> {
         return await bcrypt.hash(string, 12)
     }
+
+    async compare(string: string, stringHash: string): Promise<Boolean> {
+        return await bcrypt.compare(string, stringHash);
+    }
 }

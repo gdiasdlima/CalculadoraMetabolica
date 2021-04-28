@@ -1,4 +1,4 @@
-import { CreateLoginService } from "../../../data/services/CreateLogin"
+import { CreateLoginService } from "../../../data/services/createLogin"
 import { Bcrypt } from "../../../infra/cryptography/bcrypts"
 import { LoginRepository } from "../../../infra/repositories/loginRepository"
 import { CreateLoginController } from "../../../presentation/controllers/createLogin"

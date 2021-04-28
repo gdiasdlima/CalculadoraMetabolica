@@ -19,7 +19,7 @@ export class SignInService implements SignInUseCase {
             return new NotFoundError('participante');
         }
 
-        if (!await this.cryptProvider.compare(data.password, alreadyLogin.password)) {
+        if (!await this.cryptProvider.compare(data.senha, alreadyLogin.senha)) {
             return new UnauthorizedError();
         }
 
