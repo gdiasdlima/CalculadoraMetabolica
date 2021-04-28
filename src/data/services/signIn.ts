@@ -1,3 +1,4 @@
+import { SignInRequestModel } from "../../domain/models/signInRequestModel";
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
 
