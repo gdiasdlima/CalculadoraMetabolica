@@ -1,5 +1,5 @@
 import { Login } from "../models/login";
 
-export interface loginRepository {
+export interface ILoginRepository {
     create(user: Login): Promise<Login>
 }
