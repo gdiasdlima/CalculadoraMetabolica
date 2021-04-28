@@ -1,7 +1,8 @@
 
+import { Login } from "../../domain/models/login";
 import { LoginRepository } from "../../infra/repositories/loginRepository";
 import { Encrypter } from "../contracts/encrypter";
-import { Login } from "../models/login";
+import { LoginModel } from "../models/login";
 
 export class CreateLoginService implements CreateLoginService {
 
@@ -14,7 +15,7 @@ export class CreateLoginService implements CreateLoginService {
 
         const password = await this.encrypter.encrypt(data.senha)
 
-        const login = new Login()
+        const login = new LoginModel()
         login.nome = data.nome
         login.senha = password
         login.email = data.email
