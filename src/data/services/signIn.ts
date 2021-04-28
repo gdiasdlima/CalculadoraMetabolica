@@ -1,6 +1,7 @@
 import { SignInRequestModel } from "../../domain/models/signInRequestModel";
 import { SignInUseCase } from "../../domain/useCases/signInUseCase";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
+import { UnauthorizedError } from "../../presentation/errors/unauthorizedError";
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
 
@@ -23,9 +24,7 @@ export class SignInService implements SignInUseCase {
             return new UnauthorizedError();
         }
 
-        const loginPerfil = await this.loginPerfilRepository.findByLogin(alreadyLogin)
-
-        return { login: alreadyLogin, loginPerfil  }
+        return alreadyLogin 
 
     }
 }
