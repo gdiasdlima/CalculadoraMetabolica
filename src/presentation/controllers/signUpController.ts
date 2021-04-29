@@ -1,13 +1,13 @@
 import { Controller } from '../contracts/controller'
 import { HttpRequest, HttpResponse } from '../contracts/http';
 import { badRequest, success, serverError } from '../contracts/httpHelper'
-import { CreateLoginUseCase } from '../../domain/useCases/createLoginUseCase';
 import { Validator } from '../../validation/validator';
+import { SignUpUseCase } from '../../domain/useCases/createLoginUseCase';
 
-export class CreateLoginController implements Controller {
+export class SignUpController implements Controller {
     constructor(
         private readonly validator: Validator,
-        private readonly createLoginUseCase: CreateLoginUseCase
+        private readonly signUpUseCase: SignUpUseCase
     ) {
 
     }
@@ -19,9 +19,9 @@ export class CreateLoginController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const { nome, senha, email, telefone } = httpRequest.body
+            const { nome, senha, email, telefone, cpf, data_nascimento, peso } = httpRequest.body
 
-            const login = await this.createLoginUseCase.create(
+            const login = await this.signUpUseCase.create(
                 {
                     nome,
                     senha,
