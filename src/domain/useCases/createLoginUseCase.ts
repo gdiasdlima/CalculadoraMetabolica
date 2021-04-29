@@ -1,5 +1,6 @@
-import { Login } from "../../data/models/login";
+import { LoginModel } from "../../data/models/login";
+import { SignUpRequestModel } from "../models/SignUpRequestModel";
 
-export interface CreateLoginUseCase {
-    create(user: Login): Promise<Login>
+export interface SignUpUseCase {
+    create(user: SignUpRequestModel): Promise<LoginModel>
 }

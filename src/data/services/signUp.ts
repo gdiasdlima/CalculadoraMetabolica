@@ -1,12 +1,13 @@
 
 import { SignUpRequestModel } from "../../domain/models/SignUpRequestModel";
+import { SignUpUseCase } from "../../domain/useCases/createLoginUseCase";
 import { AlreadyExistsError } from "../../presentation/errors/alreadyExistsError";
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
 import { LoginModel } from "../models/login";
 import { PessoaModel } from "../models/pessoa";
 
-export class CreateLoginService implements CreateLoginService {
+export class SignUpService implements SignUpUseCase {
 
     constructor(
         private readonly encrypter: Encrypter,
