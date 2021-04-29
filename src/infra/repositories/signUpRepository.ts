@@ -1,12 +1,12 @@
 import { getRepository } from "typeorm";
 import { ILoginRepository } from "../../data/contracts/loginRepository";
 import { LoginModel } from "../../data/models/login";
-import { Login } from "../../domain/models/login";
+import { SignUpRequestModel } from "../../domain/models/SignUpRequestModel";
 
-export class LoginRepository implements ILoginRepository {
+export class SignUpRepository implements ILoginRepository {
 
 
-    async create(user: Login): Promise<LoginModel>{
+    async create(user: LoginModel): Promise<LoginModel>{
         const userRepository = getRepository(LoginModel)
     
         return await userRepository.save(user)
