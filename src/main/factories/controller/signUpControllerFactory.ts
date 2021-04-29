@@ -5,7 +5,7 @@ import { LoginRepository } from "../../../infra/repositories/signUpRepository"
 import { SignUpController } from "../../../presentation/controllers/signUpController"
 import { makeSignUpValidator } from "../validations/signUpValidatorFactory"
 
-export const makeCreateLoginController = (): SignUpController => {
+export const MakeSignUpController = (): SignUpController => {
     const bcrypt = new Bcrypt()
     const loginRepository = new LoginRepository()
     const pessoaRepository = new PessoaRepository()
