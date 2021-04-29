@@ -1,9 +1,10 @@
 
-import { Login } from "../../domain/models/login";
+import { Login } from "../../domain/models/SignUpRequestModel";
 import { AlreadyExistsError } from "../../presentation/errors/alreadyExistsError";
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
 import { LoginModel } from "../models/login";
+import { PessoaModel } from "../models/pessoa";
 
 export class CreateLoginService implements CreateLoginService {
 
@@ -21,13 +22,13 @@ export class CreateLoginService implements CreateLoginService {
         }
         const password = await this.encrypter.encrypt(data.senha)
 
+       
+
         const login = new LoginModel()
-        login.nome = data.nome
         login.senha = password
         login.email = data.email
         login.ativo = 'S'
         login.data_alteracao = new Date()
-        login.telefone = data.telefone
 
         console.log(login)
         return await this.loginRepository.create(login)
