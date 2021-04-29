@@ -6,12 +6,6 @@ export class LoginModel {
   id: number
 
   @Column()
-  nome: string
-
-  @Column()
-  telefone: string
-
-  @Column()
   email: string
 
   @Column()
