@@ -19,14 +19,18 @@ export class SignUpController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const { nome, senha, email, telefone, cpf, data_nascimento, peso } = httpRequest.body
+            const { nome, senha, email, telefone, cpf, dataNascimento, peso, altura } = httpRequest.body
 
             const login = await this.signUpUseCase.create(
                 {
                     nome,
                     senha,
                     email,
-                    telefone
+                    telefone,
+                    cpf,
+                    dataNascimento,
+                    peso,
+                    altura
                 }
             )
 

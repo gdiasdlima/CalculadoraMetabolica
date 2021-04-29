@@ -34,4 +34,7 @@ export class PessoaModel {
     @Column()
     peso_atual: number
 
+    @Column()
+    altura: number
+
 }

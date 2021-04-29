@@ -37,6 +37,7 @@ export class SignUpService implements SignUpUseCase {
         pessoa.peso_inicial = data.peso
         pessoa.peso_atual = data.peso
         pessoa.telefone = data.telefone
+        pessoa.altura = data.altura
        
         const pessoaCreated = await this.pessoaRepository.create(pessoa)
 
