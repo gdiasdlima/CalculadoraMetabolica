@@ -1,5 +1,5 @@
 
-import { Login } from "../../domain/models/SignUpRequestModel";
+import { SignUpRequestModel } from "../../domain/models/SignUpRequestModel";
 import { AlreadyExistsError } from "../../presentation/errors/alreadyExistsError";
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
@@ -13,7 +13,7 @@ export class CreateLoginService implements CreateLoginService {
         private readonly loginRepository: ILoginRepository
     ) { }
 
-    async create(data: Login): Promise<any> {
+    async create(data: SignUpRequestModel): Promise<any> {
 
         const alreadyLogin = await this.loginRepository.findByEmail(data.email);
 
@@ -22,8 +22,13 @@ export class CreateLoginService implements CreateLoginService {
         }
         const password = await this.encrypter.encrypt(data.senha)
 
+        const pessoa = new PessoaModel()
+        pessoa.nome = data.nome
+        pessoa.data_nascimento = data.dataNascimento
+        pessoa.peso_inicial = data.peso
+        pessoa.peso_atual = data.peso
+        pessoa.telefone = data.telefone
        
-
         const login = new LoginModel()
         login.senha = password
         login.email = data.email
