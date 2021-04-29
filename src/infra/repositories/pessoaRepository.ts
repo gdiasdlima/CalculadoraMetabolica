@@ -12,12 +12,12 @@ export class PessoaRepository implements IPessoaRepository {
         return await userRepository.save(user)
     }
 
-    async update(login: PessoaModel): Promise<void> {
-        const loginRepository = getRepository(LoginModel);
+    async update(pessoa: PessoaModel): Promise<void> {
+        const pessoaRepository = getRepository(PessoaModel);
 
-        const { id } = login
+        const { id } = pessoa
 
-        await loginRepository.update({ id }, login)
+        await pessoaRepository.update({ id }, pessoa)
     }
 
     async findByCPF(cpf: string): Promise<PessoaModel> {

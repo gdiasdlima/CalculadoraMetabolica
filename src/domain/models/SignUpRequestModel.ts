@@ -1,7 +1,8 @@
 export interface SignUpRequestModel {
     nome: string
     senha: string
-    email: string
+    email: string,
+    cpf: string
     ativo: string
     telefone: string
     peso : number

@@ -24,7 +24,7 @@ export class SignUpService implements SignUpUseCase {
             return new AlreadyExistsError('email');
         }
 
-        const alreadyUser = await this.pessoaRepository.findByCpf(data.cpf_giin);
+        const alreadyUser = await this.pessoaRepository.findByCPF(data.cpf);
         if (alreadyUser) {
             return new AlreadyExistsError('participante')
         }
