@@ -1,4 +1,4 @@
-import { SignUpService } from "../../../data/services/signUp"
+import { SignUpService } from "../../../data/services/signUpService"
 import { Bcrypt } from "../../../infra/cryptography/bcrypts"
 import { PessoaRepository } from "../../../infra/repositories/pessoaRepository"
 import { LoginRepository } from "../../../infra/repositories/signUpRepository"

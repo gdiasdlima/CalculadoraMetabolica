@@ -1,4 +1,4 @@
-import { SignInService } from "../../../data/services/signIn"
+import { SignInService } from "../../../data/services/signInService"
 import { Bcrypt } from "../../../infra/cryptography/bcrypts"
 import { LoginRepository } from "../../../infra/repositories/signUpRepository"
 import { SignInController } from "../../../presentation/controllers/signInController"
