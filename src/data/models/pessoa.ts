@@ -13,6 +13,9 @@ export class PessoaModel {
     telefone: string
 
     @Column()
+    cpf: string
+
+    @Column()
     data_nascimento: Date
 
     @OneToOne(() => AtividadeFisicaModel)

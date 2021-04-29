@@ -2,7 +2,6 @@ import { getRepository } from "typeorm";
 import { IPessoaRepository } from "../../data/contracts/pessoaRepository";
 import { LoginModel } from "../../data/models/login";
 import { PessoaModel } from "../../data/models/pessoa";
-import { SignUpRequestModel } from "../../domain/models/SignUpRequestModel";
 
 export class PessoaRepository implements IPessoaRepository {
 
@@ -20,4 +19,12 @@ export class PessoaRepository implements IPessoaRepository {
 
         await loginRepository.update({ id }, login)
     }
+
+    async findByCPF(cpf: string): Promise<PessoaModel> {
+        const pessoaRepository = getRepository(PessoaModel);
+        const pessoa = await pessoaRepository.findOne({ where: { cpf } });
+
+        return pessoa;
+    }
+
 }

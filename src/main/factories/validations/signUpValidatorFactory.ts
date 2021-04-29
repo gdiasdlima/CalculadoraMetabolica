@@ -6,7 +6,7 @@ import { ValidatorComposite } from "../../../validation/validator/validatorCompo
 export const makeSignUpValidator = (): ValidatorComposite => {
     const validations: Validator[] = []
 
-    const requiredFields = ['email', 'nome', 'senha', 'telefone']
+    const requiredFields = ['email', 'pessoa', 'senha']
     for (const field of requiredFields) {
         validations.push(new RequiredFieldValidator(field))
     }
