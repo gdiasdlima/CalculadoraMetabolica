@@ -7,4 +7,5 @@ export interface SignUpRequestModel {
     peso : number
     altura : number
     dataNascimento: Date
+    sexo: string
 }

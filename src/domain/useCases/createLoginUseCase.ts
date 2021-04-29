@@ -1,4 +1,4 @@
-import { LoginModel } from "../../data/models/login";
+import { LoginModel } from "../../data/entities/login";
 import { SignUpRequestModel } from "../models/SignUpRequestModel";
 
 export interface SignUpUseCase {

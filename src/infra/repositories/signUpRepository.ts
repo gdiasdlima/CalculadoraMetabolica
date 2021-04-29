@@ -1,6 +1,6 @@
 import { getRepository } from "typeorm";
 import { ILoginRepository } from "../../data/contracts/loginRepository";
-import { LoginModel } from "../../data/models/login";
+import { LoginModel } from "../../data/entities/login";
 
 export class LoginRepository implements ILoginRepository {
 

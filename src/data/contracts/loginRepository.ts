@@ -1,4 +1,4 @@
-import { LoginModel } from "../models/login";
+import { LoginModel } from "../entities/login";
 
 export interface ILoginRepository {
     create(user: LoginModel): Promise<LoginModel>

@@ -7,7 +7,7 @@ export class LoginModel {
   id: number
 
   @OneToOne(() => PessoaModel)
-  @JoinColumn()
+  @JoinColumn({name : 'id_pessoa'})
   pessoa: PessoaModel;
   
   @Column()

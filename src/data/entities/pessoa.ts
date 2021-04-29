@@ -1,5 +1,6 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { AtividadeFisicaModel } from './atividadeFisica'
+import { objetivoModel } from './objetivo'
 
 @Entity('pessoa')
 export class PessoaModel {
@@ -16,14 +17,18 @@ export class PessoaModel {
     cpf: string
 
     @Column()
+    sexo: string
+
+    @Column()
     data_nascimento: Date
 
     @OneToOne(() => AtividadeFisicaModel)
-    @JoinColumn()
+    @JoinColumn({ name: 'id_atividade_fisica' })
     atividade_fisica: AtividadeFisicaModel;
 
-    @Column()
-    email: string
+    @OneToOne(() => objetivoModel)
+    @JoinColumn({ name: 'id_objetivo' })
+    objetivo: objetivoModel;
 
     @Column()
     litros_agua: number

@@ -5,8 +5,8 @@ import { AlreadyExistsError } from "../../presentation/errors/alreadyExistsError
 import { Encrypter } from "../contracts/encrypter";
 import { ILoginRepository } from "../contracts/loginRepository";
 import { IPessoaRepository } from "../contracts/pessoaRepository";
-import { LoginModel } from "../models/login";
-import { PessoaModel } from "../models/pessoa";
+import { LoginModel } from "../entities/login";
+import { PessoaModel } from "../entities/pessoa";
 
 export class SignUpService implements SignUpUseCase {
 
@@ -38,7 +38,10 @@ export class SignUpService implements SignUpUseCase {
         pessoa.peso_atual = data.peso
         pessoa.telefone = data.telefone
         pessoa.altura = data.altura
+        pessoa.cpf = data.cpf
+        pessoa.sexo = data.sexo
        
+        console.log(pessoa)
         const pessoaCreated = await this.pessoaRepository.create(pessoa)
 
         const login = new LoginModel()
@@ -49,5 +52,7 @@ export class SignUpService implements SignUpUseCase {
         login.data_alteracao = new Date()
 
         return await this.loginRepository.create(login)
+
+
     }
 }

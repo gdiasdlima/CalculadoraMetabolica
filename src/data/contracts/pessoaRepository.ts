@@ -1,4 +1,4 @@
-import { PessoaModel } from "../models/pessoa";
+import { PessoaModel } from "../entities/pessoa";
 
 export interface IPessoaRepository {
     create(user: PessoaModel): Promise<PessoaModel>
