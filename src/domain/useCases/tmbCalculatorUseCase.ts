@@ -1,5 +1,5 @@
 import { TMBCalculatorModel } from "../models/tmbCalculatorModel";
 
 export interface TMBCalculatorUseCase {
-    calcular(premissas: TMBCalculatorModel): Promise<any>
+    calculate(idPessoa: number): Promise<any>
 }
