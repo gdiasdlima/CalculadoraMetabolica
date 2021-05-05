@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'ty
 import { Pessoa } from './pessoa';
 
 @Entity('ficha_metabolica')
-export class fichaMetabolica {
+export class FichaMetabolica {
   @PrimaryGeneratedColumn('increment')
   id: number
 
