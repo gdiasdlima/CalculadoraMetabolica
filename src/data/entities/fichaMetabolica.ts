@@ -1,14 +1,14 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { PessoaModel } from './pessoa';
+import { Pessoa } from './pessoa';
 
 @Entity('ficha_metabolica')
-export class LoginModel {
+export class fichaMetabolica {
   @PrimaryGeneratedColumn('increment')
   id: number
 
-  @OneToOne(() => PessoaModel)
+  @OneToOne(() => Pessoa)
   @JoinColumn({name : 'id_pessoa'})
-  pessoa: PessoaModel;
+  pessoa: Pessoa;
   
   @Column()
   tmb: number

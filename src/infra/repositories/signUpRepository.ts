@@ -1,25 +1,25 @@
 import { getRepository } from "typeorm";
 import { ILoginRepository } from "../../data/contracts/loginRepository";
-import { LoginModel } from "../../data/entities/login";
+import { Login } from "../../data/entities/login";
 
 export class LoginRepository implements ILoginRepository {
 
 
-    async create(user: LoginModel): Promise<LoginModel>{
-        const userRepository = getRepository(LoginModel)
+    async create(user: Login): Promise<Login>{
+        const userRepository = getRepository(Login)
     
         return await userRepository.save(user)
     }
     
-    async findByEmail(email: string): Promise<LoginModel> {
-        const loginRepository = getRepository(LoginModel);
+    async findByEmail(email: string): Promise<Login> {
+        const loginRepository = getRepository(Login);
         const login = await loginRepository.findOne({ where: { email } });
 
         return login;
     }
 
-    async update(login: LoginModel): Promise<void> {
-        const loginRepository = getRepository(LoginModel);
+    async update(login: Login): Promise<void> {
+        const loginRepository = getRepository(Login);
 
         const { id } = login
 

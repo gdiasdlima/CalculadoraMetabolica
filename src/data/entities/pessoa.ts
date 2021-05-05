@@ -1,9 +1,9 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { AtividadeFisicaModel } from './atividadeFisica'
-import { objetivoModel } from './objetivo'
+import { AtividadeFisica } from './atividadeFisica'
+import { Objetivo } from './objetivo'
 
 @Entity('pessoa')
-export class PessoaModel {
+export class Pessoa {
     @PrimaryGeneratedColumn('increment')
     id: number
 
@@ -22,13 +22,13 @@ export class PessoaModel {
     @Column()
     data_nascimento: Date
 
-    @OneToOne(() => AtividadeFisicaModel)
+    @OneToOne(() => AtividadeFisica)
     @JoinColumn({ name: 'id_atividade_fisica' })
-    atividade_fisica: AtividadeFisicaModel;
+    atividade_fisica: AtividadeFisica;
 
-    @OneToOne(() => objetivoModel)
+    @OneToOne(() => Objetivo)
     @JoinColumn({ name: 'id_objetivo' })
-    objetivo: objetivoModel;
+    objetivo: Objetivo;
 
     @Column()
     litros_agua: number
