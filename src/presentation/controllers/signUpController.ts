@@ -2,7 +2,7 @@ import { Controller } from '../contracts/controller'
 import { HttpRequest, HttpResponse } from '../contracts/http';
 import { badRequest, success, serverError } from '../contracts/httpHelper'
 import { Validator } from '../../validation/validator';
-import { SignUpUseCase } from '../../domain/useCases/createLoginUseCase';
+import { SignUpUseCase } from '../../domain/useCases/signUpUseCase';
 
 export class SignUpController implements Controller {
     constructor(
@@ -19,7 +19,7 @@ export class SignUpController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const { nome, senha, email, telefone, cpf, dataNascimento, peso, altura, sexo } = httpRequest.body
+            const { nome, senha, email, telefone, cpf, dataNascimento, peso, altura, sexo, atividadeFisica, litrosAgua, objetivo } = httpRequest.body
 
             const login = await this.signUpUseCase.create(
                 {
@@ -31,7 +31,10 @@ export class SignUpController implements Controller {
                     dataNascimento,
                     peso,
                     altura,
-                    sexo
+                    sexo,
+                    atividadeFisica,
+                    litrosAgua,
+                    objetivo
                 }
             )
 

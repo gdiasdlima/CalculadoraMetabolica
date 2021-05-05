@@ -5,6 +5,6 @@
     "password": "1",
     "database": "calculadora",
     "entities": [
-        "./src/data/models/*.ts"
+        "./src/data/entities/*.ts"
     ]
 }
