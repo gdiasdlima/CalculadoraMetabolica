@@ -3,6 +3,8 @@ import { TMBCalculatorModel } from "../../domain/models/tmbCalculatorModel";
 import { TMBCalculatorUseCase } from "../../domain/useCases/tmbCalculatorUseCase";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IPessoaRepository } from "../contracts/pessoaRepository";
+import { fichaMetabolica } from "../entities/fichaMetabolica";
+import { Pessoa } from "../entities/pessoa";
 import { IRetornarIdade } from "../helpers/IRetornarIdade";
 
 export class TMBCalculatorService implements TMBCalculatorUseCase {
@@ -21,17 +23,42 @@ export class TMBCalculatorService implements TMBCalculatorUseCase {
         }
 
         const idade = this.retornarIdade.retornar(new Date(pessoa.data_nascimento), new Date())
-        
-        let tmb
+
+        let tmb, ndc
 
         console.log(idade)
         if (pessoa.sexo === "M") {
             tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) + 5
-        }else if(pessoa.sexo === "F"){
-            tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) -161
+        } else if (pessoa.sexo === "F") {
+            tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) - 161
         }
 
-        return tmb
+        switch (pessoa.atividade_fisica.id) {
+            case 1:
+                ndc = tmb * 1.2
+                break;
+            case 2:
+                ndc = tmb * 1.375
+                break;
+            case 3:
+                ndc = tmb * 1.55
+
+                break;
+            case 4:
+                ndc = tmb * 1.725
+                break;
+            case 5:
+                ndc = tmb * 1.9
+                break;
+        }
+
+        const ficha = new fichaMetabolica()
+        ficha.pessoa = new Pessoa()
+        ficha.pessoa.id = pessoa.id
+        ficha.tmb = tmb
+        ficha.ndc = ndc
+        ficha.data_calculo = new Date()
+        return ficha
     }
 
 }

@@ -1,7 +1,7 @@
-import { LoginModel } from "../entities/login";
+import { Login } from "../entities/login";
 
 export interface ILoginRepository {
-    create(user: LoginModel): Promise<LoginModel>
-    findByEmail(email : string) : Promise<LoginModel>;
-    update(user: LoginModel): Promise<void>;
+    create(user: Login): Promise<Login>
+    findByEmail(email : string) : Promise<Login>;
+    update(user: Login): Promise<void>;
 }
