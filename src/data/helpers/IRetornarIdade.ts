@@ -1,3 +1,3 @@
 export interface IRetornarIdade {
-    retornar(dataNascimento: Date, dataAtual: Date): Number
+    retornar(dataNascimento: Date, dataAtual: Date): number
 }

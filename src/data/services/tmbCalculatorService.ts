@@ -19,12 +19,19 @@ export class TMBCalculatorService implements TMBCalculatorUseCase {
         if (!pessoa) {
             return new NotFoundError('pessoa')
         }
-        const idade =  this.retornarIdade.retornar(pessoa.data_nascimento, new Date())
-        console.log(idade)
-        // if(pessoa.sexo === "M")
+
+        const idade = this.retornarIdade.retornar(new Date(pessoa.data_nascimento), new Date())
         
-        // let tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * )
-        return Any
+        let tmb
+
+        console.log(idade)
+        if (pessoa.sexo === "M") {
+            tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) + 5
+        }else if(pessoa.sexo === "F"){
+            tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) -161
+        }
+
+        return tmb
     }
 
 }
