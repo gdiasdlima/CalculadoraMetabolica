@@ -1,3 +1,3 @@
-export interface TMBCalculatorUseCase {
+export interface FichaMetabolicaUseCase {
     calculate(idPessoa: number): Promise<any>
 }

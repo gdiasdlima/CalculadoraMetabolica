@@ -1,13 +1,11 @@
-import { Any } from "typeorm";
-import { TMBCalculatorModel } from "../../domain/models/tmbCalculatorModel";
-import { TMBCalculatorUseCase } from "../../domain/useCases/tmbCalculatorUseCase";
+import { FichaMetabolicaUseCase } from "../../domain/useCases/fichaMetabolicaUseCase";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IPessoaRepository } from "../contracts/pessoaRepository";
-import { fichaMetabolica } from "../entities/fichaMetabolica";
+import { FichaMetabolica } from "../entities/fichaMetabolica";
 import { Pessoa } from "../entities/pessoa";
 import { IRetornarIdade } from "../helpers/IRetornarIdade";
 
-export class TMBCalculatorService implements TMBCalculatorUseCase {
+export class FichaMetabolicaService implements FichaMetabolicaUseCase {
 
     constructor(
         private readonly pessoaRepository: IPessoaRepository,
@@ -52,7 +50,7 @@ export class TMBCalculatorService implements TMBCalculatorUseCase {
                 break;
         }
 
-        const ficha = new fichaMetabolica()
+        const ficha = new FichaMetabolica()
         ficha.pessoa = new Pessoa()
         ficha.pessoa.id = pessoa.id
         ficha.tmb = tmb
