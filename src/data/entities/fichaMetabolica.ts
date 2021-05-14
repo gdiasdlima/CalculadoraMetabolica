@@ -17,5 +17,8 @@ export class FichaMetabolica {
   ndc: number
 
   @Column()
+  imc: number
+
+  @Column()
   data_calculo: Date
 }
