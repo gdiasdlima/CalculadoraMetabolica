@@ -24,7 +24,7 @@ export class Pessoa {
 
     @OneToOne(() => AtividadeFisica)
     @JoinColumn({ name: 'id_atividade_fisica' })
-    atividade_fisica: AtividadeFisica;
+    atividadeFisica: AtividadeFisica;
 
     @OneToOne(() => Objetivo)
     @JoinColumn({ name: 'id_objetivo' })

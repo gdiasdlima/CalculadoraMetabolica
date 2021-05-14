@@ -31,7 +31,7 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
             tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) - 161
         }
 
-        switch (pessoa.atividade_fisica.id) {
+        switch (pessoa.atividadeFisica.id) {
             case 1:
                 ndc = tmb * 1.2
                 break;

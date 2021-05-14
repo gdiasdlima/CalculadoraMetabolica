@@ -33,7 +33,7 @@ export class SignUpService implements SignUpUseCase {
         const password = await this.encrypter.encrypt(data.senha)
 
         const pessoa = new Pessoa()
-        pessoa.atividade_fisica = new AtividadeFisica()
+        pessoa.atividadeFisica = new AtividadeFisica()
         pessoa.objetivo = new Objetivo()
         pessoa.nome = data.nome
         pessoa.data_nascimento = data.dataNascimento
@@ -43,7 +43,7 @@ export class SignUpService implements SignUpUseCase {
         pessoa.altura = data.altura
         pessoa.cpf = data.cpf
         pessoa.sexo = data.sexo
-        pessoa.atividade_fisica.id = data.atividadeFisica
+        pessoa.atividadeFisica.id = data.atividadeFisica
         pessoa.objetivo.id = data.objetivo
         pessoa.litros_agua = data.litrosAgua
        

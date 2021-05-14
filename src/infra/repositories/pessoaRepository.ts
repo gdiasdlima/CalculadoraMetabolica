@@ -28,7 +28,7 @@ export class PessoaRepository implements IPessoaRepository {
 
     async findByID(id: number): Promise<Pessoa> {
         const pessoaRepository = getRepository(Pessoa)
-        const pessoa = await pessoaRepository.findOne({ where: { id } });
+        const pessoa = await pessoaRepository.findOne({ where: { id }, relations: ['atividadeFisica'] });
         return pessoa;
     }
 
