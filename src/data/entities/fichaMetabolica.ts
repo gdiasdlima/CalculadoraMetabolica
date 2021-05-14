@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { Pessoa } from './pessoa';
 
 @Entity('ficha_metabolica')
@@ -6,7 +6,7 @@ export class FichaMetabolica {
   @PrimaryGeneratedColumn('increment')
   id: number
 
-  @OneToOne(() => Pessoa)
+  @ManyToOne(() => Pessoa)
   @JoinColumn({name : 'id_pessoa'})
   pessoa: Pessoa;
   
@@ -18,6 +18,9 @@ export class FichaMetabolica {
 
   @Column()
   imc: number
+
+  @Column()
+  gasto_semanal: number
 
   @Column()
   data_calculo: Date

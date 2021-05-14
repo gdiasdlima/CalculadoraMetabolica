@@ -50,6 +50,7 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
         }
 
         imc = parseFloat(((pessoa.peso_atual / (pessoa.altura * pessoa.altura)) * 10000).toFixed(2))
+
         const ficha = new FichaMetabolica()
         ficha.pessoa = new Pessoa()
         ficha.pessoa.id = pessoa.id
@@ -57,6 +58,8 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
         ficha.ndc = ndc
         ficha.imc = imc
         ficha.data_calculo = new Date()
+        ficha.gasto_semanal = ndc * 7
+        
         return ficha
     }
 
