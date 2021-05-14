@@ -46,7 +46,7 @@ export class SignUpService implements SignUpUseCase {
         pessoa.atividadeFisica.id = data.atividadeFisica
         pessoa.objetivo.id = data.objetivo
         pessoa.litros_agua = data.litrosAgua
-       
+        pessoa.circunferencia = data.circunferencia
         const pessoaCreated = await this.pessoaRepository.create(pessoa)
 
         const login = new Login()

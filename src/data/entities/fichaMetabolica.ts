@@ -23,5 +23,8 @@ export class FichaMetabolica {
   gasto_semanal: number
 
   @Column()
+  percentual_gordura: number
+
+  @Column()
   data_calculo: Date
 }

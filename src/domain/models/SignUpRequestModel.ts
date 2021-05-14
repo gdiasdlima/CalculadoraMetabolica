@@ -11,4 +11,5 @@ export interface SignUpRequestModel {
     atividadeFisica: number
     objetivo: number
     litrosAgua: number
+    circunferencia: number
 }

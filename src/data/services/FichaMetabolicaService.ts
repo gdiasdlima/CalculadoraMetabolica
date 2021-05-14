@@ -20,14 +20,19 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
             return new NotFoundError('pessoa')
         }
 
+        console.log(pessoa)
         const idade = this.retornarIdade.retornar(new Date(pessoa.data_nascimento), new Date())
 
-        let tmb, ndc, imc
+        let tmb, ndc, imc, percentual
 
         if (pessoa.sexo === "M") {
             tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) + 5
+            percentual = 64 - (20 * pessoa.altura / pessoa.circunferencia)
+
         } else if (pessoa.sexo === "F") {
             tmb = (10 * pessoa.peso_atual) + (6.25 * pessoa.altura) - (5 * idade) - 161
+            percentual = 76 - (20 * pessoa.altura / pessoa.circunferencia)
+
         }
 
         switch (pessoa.atividadeFisica.id) {
@@ -50,6 +55,7 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
         }
 
         imc = parseFloat(((pessoa.peso_atual / (pessoa.altura * pessoa.altura)) * 10000).toFixed(2))
+        percentual = parseFloat(percentual.toFixed(2))
 
         const ficha = new FichaMetabolica()
         ficha.pessoa = new Pessoa()
@@ -59,7 +65,8 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
         ficha.imc = imc
         ficha.data_calculo = new Date()
         ficha.gasto_semanal = ndc * 7
-        
+        ficha.percentual_gordura = percentual
+
         return ficha
     }
 
