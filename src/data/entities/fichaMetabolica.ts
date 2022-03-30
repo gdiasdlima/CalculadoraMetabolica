@@ -20,6 +20,15 @@ export class FichaMetabolica {
   imc: number
 
   @Column()
+  proteina: number
+
+  @Column()
+  carboidrato: number
+  
+  @Column()
+  gordura: number
+
+  @Column()
   gasto_semanal: number
 
   @Column()

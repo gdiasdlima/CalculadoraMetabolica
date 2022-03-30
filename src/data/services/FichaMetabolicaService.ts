@@ -63,11 +63,11 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
         ficha.tmb = tmb
         ficha.ndc = ndc
         ficha.imc = imc
-        ficha.data_calculo = new Date()
         ficha.gasto_semanal = ndc * 7
         ficha.percentual_gordura = percentual
+        ficha.data_calculo = new Date()
 
-        return ficha
+        return ficha 
     }
 
 }
