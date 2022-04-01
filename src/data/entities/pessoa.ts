@@ -40,6 +40,9 @@ export class Pessoa {
     peso_atual: number
 
     @Column()
+    peso_objetivo: number
+
+    @Column()
     altura: number
 
     @Column()

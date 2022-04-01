@@ -36,4 +36,7 @@ export class FichaMetabolica {
 
   @Column()
   data_calculo: Date
+
+  @Column()
+  dias_objetivo: number
 }

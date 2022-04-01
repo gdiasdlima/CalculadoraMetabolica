@@ -1,6 +1,7 @@
 import { FichaMetabolicaUseCase } from "../../domain/useCases/fichaMetabolicaUseCase";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
-import { IPessoaRepository } from "../contracts/pessoaRepository";
+import { IFichaMetabolicaRepository } from "../contracts/fichaMetabolica";
+import { IPessoaRepository } from "../contracts/pessoa";
 import { FichaMetabolica } from "../entities/fichaMetabolica";
 import { Pessoa } from "../entities/pessoa";
 import { IRetornarIdade } from "../helpers/IRetornarIdade";
@@ -10,6 +11,7 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
     constructor(
         private readonly pessoaRepository: IPessoaRepository,
         private retornarIdade: IRetornarIdade,
+        private fichaMetabolicaRepository: IFichaMetabolicaRepository 
 
     ) { }
 
@@ -67,6 +69,7 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
         ficha.percentual_gordura = percentual
         ficha.data_calculo = new Date()
 
+        await this.fichaMetabolicaRepository.create(ficha)
         return ficha 
     }
 

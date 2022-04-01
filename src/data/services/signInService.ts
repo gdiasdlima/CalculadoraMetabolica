@@ -3,7 +3,7 @@ import { SignInUseCase } from "../../domain/useCases/signInUseCase";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { UnauthorizedError } from "../../presentation/errors/unauthorizedError";
 import { Encrypter } from "../contracts/encrypter";
-import { ILoginRepository } from "../contracts/loginRepository";
+import { ILoginRepository } from "../contracts/login";
 
 export class SignInService implements SignInUseCase {
 

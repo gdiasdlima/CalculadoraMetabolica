@@ -1,5 +1,5 @@
 import { getRepository } from "typeorm";
-import { IPessoaRepository } from "../../data/contracts/pessoaRepository";
+import { IPessoaRepository } from "../../data/contracts/pessoa";
 import { Pessoa } from "../../data/entities/pessoa";
 
 export class PessoaRepository implements IPessoaRepository {

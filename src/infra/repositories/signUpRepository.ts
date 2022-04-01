@@ -1,5 +1,5 @@
 import { getRepository } from "typeorm";
-import { ILoginRepository } from "../../data/contracts/loginRepository";
+import { ILoginRepository } from "../../data/contracts/login";
 import { Login } from "../../data/entities/login";
 
 export class LoginRepository implements ILoginRepository {
