@@ -1,4 +1,4 @@
-import { FichaMetabolicaUseCase } from "../../domain/useCases/fichaMetabolicaUseCase";
+import { CalculoMetabolicoUseCase } from "../../domain/useCases/CalculoMetabolicoUseCase";
 import { Validator } from "../../validation/validator";
 import { Controller } from "../contracts/controller";
 import { HttpRequest, HttpResponse } from "../contracts/http";
@@ -6,8 +6,8 @@ import { badRequest, serverError, success, unauthorized  } from "../contracts/ht
 import { NotFoundError } from "../errors/NotFoundError";
 import { UnauthorizedError } from "../errors/unauthorizedError";
 
-export class FichaMetabolicaController implements Controller {
-    constructor(private readonly validator: Validator, private readonly fichaMetabolicaUseCase: FichaMetabolicaUseCase) { }
+export class CalculoMetabolicoController implements Controller {
+    constructor(private readonly validator: Validator, private readonly calculoMetabolicoUseCase: CalculoMetabolicoUseCase) { }
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
             const error = this.validator.validate(httpRequest.body)
@@ -18,13 +18,13 @@ export class FichaMetabolicaController implements Controller {
 
             const { idPessoa } = httpRequest.body
 
-            const login = await this.fichaMetabolicaUseCase.calculate( idPessoa )
+            const calculo = await this.calculoMetabolicoUseCase.calculate( idPessoa )
 
-            if (login instanceof NotFoundError || login instanceof UnauthorizedError) {
+            if (calculo instanceof NotFoundError || calculo instanceof UnauthorizedError) {
                 return unauthorized()
             }
 
-            return success(login)
+            return success(calculo)
 
         } catch (error) {
             console.log(error.message)

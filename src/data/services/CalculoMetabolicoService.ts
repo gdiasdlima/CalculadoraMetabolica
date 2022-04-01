@@ -3,7 +3,7 @@ import { CalculoMetabolicoUseCase } from "../../domain/useCases/CalculoMetabolic
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IFichaMetabolicaRepository } from "../contracts/fichaMetabolica";
 import { IPessoaRepository } from "../contracts/pessoa";
-export class CalculoMetabolico implements CalculoMetabolicoUseCase {
+export class CalculoMetabolicoService implements CalculoMetabolicoUseCase {
 
     constructor(
         private readonly pessoaRepository: IPessoaRepository,
