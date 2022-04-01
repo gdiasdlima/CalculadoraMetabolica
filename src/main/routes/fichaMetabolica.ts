@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { adaptRouter } from "../expressAdapter/expressAdapter";
+import { adaptRouter } from "../adapters/express-controller-adapter";
 import { MakeFichaMetabolicaController } from "../factories/controller/fichaMetabolicaControllerFactory";
 
 

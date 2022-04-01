@@ -1,4 +1,4 @@
-import { Login } from "../entities/login";
+import { Login } from "../../entities/login";
 
 export interface ILoginRepository {
     create(user: Login): Promise<Login>

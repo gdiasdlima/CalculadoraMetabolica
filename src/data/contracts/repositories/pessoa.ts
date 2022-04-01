@@ -1,4 +1,4 @@
-import { Pessoa } from "../entities/pessoa";
+import { Pessoa } from "../../entities/pessoa";
 
 export interface IPessoaRepository {
     create(user: Pessoa): Promise<Pessoa>

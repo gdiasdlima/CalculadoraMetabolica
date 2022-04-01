@@ -10,6 +10,6 @@ export interface SignUpRequestModel {
     sexo: string
     atividadeFisica: number
     objetivo: number
-    litrosAgua: number
     circunferencia: number
+    pesoObjetivo: number
 }

@@ -1,9 +1,9 @@
 import { SignUpRequestModel } from "../../domain/models/SignUpRequestModel";
 import { SignUpUseCase } from "../../domain/useCases/signUpUseCase";
 import { AlreadyExistsError } from "../../presentation/errors/alreadyExistsError";
-import { Encrypter } from "../contracts/encrypter";
-import { ILoginRepository } from "../contracts/login";
-import { IPessoaRepository } from "../contracts/pessoa";
+import { Encrypter } from "../contracts/repositories/encrypter";
+import { ILoginRepository } from "../contracts/repositories/login";
+import { IPessoaRepository } from "../contracts/repositories/pessoa";
 import { AtividadeFisica } from "../entities/atividadeFisica";
 import { Login } from "../entities/login";
 import { Objetivo } from "../entities/objetivo";
@@ -45,8 +45,8 @@ export class SignUpService implements SignUpUseCase {
         pessoa.sexo = data.sexo
         pessoa.atividadeFisica.id = data.atividadeFisica
         pessoa.objetivo.id = data.objetivo
-        pessoa.litros_agua = data.litrosAgua
         pessoa.circunferencia = data.circunferencia
+        pessoa.peso_objetivo = data.pesoObjetivo
         const pessoaCreated = await this.pessoaRepository.create(pessoa)
 
         const login = new Login()

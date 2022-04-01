@@ -1,8 +1,8 @@
 import { getRepository } from "typeorm";
-import { IFichaMetabolica } from "../../data/contracts/fichaMetabolica";
+import { IFichaMetabolicaRepository } from "../../data/contracts/repositories/fichaMetabolica";
 import { FichaMetabolica } from "../../data/entities/fichaMetabolica";
 
-export class FichaMetabolicaRepository implements IFichaMetabolica {
+export class FichaMetabolicaRepository implements IFichaMetabolicaRepository {
 
 
     async create(data: FichaMetabolica): Promise<FichaMetabolica> {

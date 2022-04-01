@@ -2,8 +2,8 @@ import { SignInRequestModel } from "../../domain/models/signInRequestModel";
 import { SignInUseCase } from "../../domain/useCases/signInUseCase";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { UnauthorizedError } from "../../presentation/errors/unauthorizedError";
-import { Encrypter } from "../contracts/encrypter";
-import { ILoginRepository } from "../contracts/login";
+import { Encrypter } from "../contracts/repositories/encrypter";
+import { ILoginRepository } from "../contracts/repositories/login";
 
 export class SignInService implements SignInUseCase {
 

@@ -1,4 +1,4 @@
-import { FichaMetabolica } from "../entities/fichaMetabolica";
+import { FichaMetabolica } from "../../entities/fichaMetabolica";
 
 export interface IFichaMetabolicaRepository {
     create(data: FichaMetabolica): Promise<FichaMetabolica>

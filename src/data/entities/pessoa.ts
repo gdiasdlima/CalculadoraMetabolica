@@ -31,9 +31,6 @@ export class Pessoa {
     objetivo: Objetivo;
 
     @Column()
-    litros_agua: number
-
-    @Column()
     peso_inicial: number
 
     @Column()
