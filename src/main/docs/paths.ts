@@ -1,9 +1,11 @@
 import {
   signInPath,
-  signUpPath
+  signUpPath,
+  fichaMetabolicaPath
 } from './paths/'
 
 export default {
   '/login/signIn': signInPath,
-  '/login/signUp': signUpPath
+  '/login/signUp': signUpPath,
+  '/fichaMetabolica/Calcular': fichaMetabolicaPath
 }

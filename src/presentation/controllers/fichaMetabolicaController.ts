@@ -10,13 +10,13 @@ export class FichaMetabolicaController implements Controller {
     constructor(private readonly validator: Validator, private readonly fichaMetabolicaUseCase: FichaMetabolicaUseCase) { }
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
-            const error = this.validator.validate(httpRequest.body)
+            const error = this.validator.validate(httpRequest.query)
 
             if (error) {
                 return badRequest(error)
             }
 
-            const { idPessoa } = httpRequest.body
+            const { idPessoa } = httpRequest.query
 
             const ficha = await this.fichaMetabolicaUseCase.calculate( idPessoa )
 

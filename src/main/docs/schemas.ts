@@ -1,9 +1,11 @@
 import {
   signInParamsSchema,
-  signUpParamsSchema
+  signUpParamsSchema,
+  FichaMetabolicaParamsSchema
 } from './schemas/'
 
 export default {
   signUpParams: signUpParamsSchema,
-  signInParams: signInParamsSchema
+  signInParams: signInParamsSchema,
+  fichaMetabolicaParams: FichaMetabolicaParamsSchema
 }

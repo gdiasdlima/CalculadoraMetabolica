@@ -1,8 +1,8 @@
 import { CalculoDiarioModel } from "../../domain/models/calculoDiarioModel";
 import { CalculoMetabolicoUseCase } from "../../domain/useCases/CalculoMetabolicoUseCase";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
-import { IFichaMetabolicaRepository } from "../contracts/fichaMetabolica";
-import { IPessoaRepository } from "../contracts/pessoa";
+import { IFichaMetabolicaRepository } from "../contracts/repositories/fichaMetabolica";
+import { IPessoaRepository } from "../contracts/repositories/pessoa";
 export class CalculoMetabolicoService implements CalculoMetabolicoUseCase {
 
     constructor(
