@@ -25,23 +25,18 @@ export class SignUpService implements SignUpUseCase {
             return new AlreadyExistsError('email');
         }
 
-        const alreadyUser = await this.pessoaRepository.findByCPF(data.cpf);
-        if (alreadyUser) {
-            return new AlreadyExistsError('participante')
-        }
-
         const password = await this.encrypter.encrypt(data.senha)
 
         const pessoa = new Pessoa()
         pessoa.atividadeFisica = new AtividadeFisica()
         pessoa.objetivo = new Objetivo()
         pessoa.nome = data.nome
-        pessoa.data_nascimento = data.dataNascimento
+        // pessoa.data_nascimento = data.dataNascimento
         pessoa.peso_inicial = data.peso
         pessoa.peso_atual = data.peso
-        pessoa.telefone = data.telefone
+        pessoa.telefone = 'nao'
         pessoa.altura = data.altura
-        pessoa.cpf = data.cpf
+        pessoa.cpf = 'nao'
         pessoa.sexo = data.sexo
         pessoa.atividadeFisica.id = data.atividadeFisica
         pessoa.objetivo.id = data.objetivo

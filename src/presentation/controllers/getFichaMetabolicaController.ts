@@ -1,4 +1,5 @@
-import { SignInUseCase } from "../../domain/useCases/signInUseCase";
+import { FichaMetabolicaUseCase } from "../../domain/useCases/fichaMetabolicaUseCase";
+import { GetFichaMetabolicaUseCase } from "../../domain/useCases/getMetabolicaUseCase";
 import { Validator } from "../../validation/validator";
 import { Controller } from "../contracts/controller";
 import { HttpRequest, HttpResponse } from "../contracts/http";
@@ -6,28 +7,25 @@ import { badRequest, serverError, success, unauthorized  } from "../contracts/ht
 import { NotFoundError } from "../errors/NotFoundError";
 import { UnauthorizedError } from "../errors/unauthorizedError";
 
-export class SignInController implements Controller {
-    constructor(private readonly validator: Validator, private readonly signInUseCase: SignInUseCase) { }
+export class GetFichaMetabolicaController implements Controller {
+    constructor(private readonly validator: Validator, private readonly getFichaMetabolicaUseCase: GetFichaMetabolicaUseCase) { }
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
-            console.log('testou')
-            const error = this.validator.validate(httpRequest.body)
+            const error = this.validator.validate(httpRequest.query)
 
             if (error) {
                 return badRequest(error)
             }
 
-            const { email, senha } = httpRequest.body
+            const { idPessoa } = httpRequest.query
 
-            const login = await this.signInUseCase.sign({ email, senha })
-            console.log(email, senha)
-            console.log('testou2')
+            const ficha = await this.getFichaMetabolicaUseCase.getByID( idPessoa )
 
-            if (login instanceof NotFoundError || login instanceof UnauthorizedError) {
+            if (ficha instanceof NotFoundError || ficha instanceof UnauthorizedError) {
                 return unauthorized()
             }
-            console.log(login)
-            return success(login)
+
+            return success(ficha)
 
         } catch (error) {
             console.log(error.message)

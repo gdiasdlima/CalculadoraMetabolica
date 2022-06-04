@@ -7,13 +7,13 @@ import { ValidatorComposite } from "../../../validation/validator/validatorCompo
 export const makeSignUpValidator = (): ValidatorComposite => {
     const validations: Validator[] = []
 
-    const requiredFields = ['email', 'senha', 'nome', 'cpf', 'dataNascimento', 'peso', 'altura', 'telefone', 'sexo', 'atividadeFisica', 'objetivo', 'litrosAgua']
+    const requiredFields = ['email', 'senha', 'nome', 'peso', 'altura', 'sexo', 'atividadeFisica', 'objetivo']
     for (const field of requiredFields) {
         validations.push(new RequiredFieldValidator(field))
     }
     
     validations.push(new EmailValidator('email'))
-    validations.push(new CPFValidator('cpf'))
+    // validations.push(new CPFValidator('cpf'))
 
     return new ValidatorComposite(validations)
 }

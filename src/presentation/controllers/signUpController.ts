@@ -15,19 +15,17 @@ export class SignUpController implements Controller {
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
             const error = this.validator.validate(httpRequest.body)
-
+            console.log('chegou aqui')
             if (error) {
                 return badRequest(error)
             }
-            const { nome, senha, email, telefone, cpf, dataNascimento, peso, altura, sexo, atividadeFisica, objetivo, circunferencia, pesoObjetivo } = httpRequest.body
+            const { nome, senha, email, dataNascimento, peso, altura, sexo, atividadeFisica, objetivo, circunferencia, pesoObjetivo } = httpRequest.body
 
             const login = await this.signUpUseCase.create(
                 {
                     nome,
                     senha,
                     email,
-                    telefone,
-                    cpf,
                     dataNascimento,
                     peso,
                     altura,

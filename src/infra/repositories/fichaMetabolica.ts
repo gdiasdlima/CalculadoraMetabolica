@@ -11,9 +11,9 @@ export class FichaMetabolicaRepository implements IFichaMetabolicaRepository {
         return await fichaMetabolicaRepository.save(data)
     }
 
-    async findByIDPessoa(idPessoa: number): Promise<FichaMetabolica> {
+    async findByIDPessoa(id_pessoa: number): Promise<FichaMetabolica> {
         const fichaMetabolicaRepository = getRepository(FichaMetabolica);
-        const ficha = await fichaMetabolicaRepository.findOne({ where: { idPessoa } });
+        const ficha = await fichaMetabolicaRepository.findOne({ where: { pessoa: {id : id_pessoa} } });
 
         return ficha;
     }

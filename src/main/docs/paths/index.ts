@@ -1,3 +1,5 @@
 export * from './signUpPath'
 export * from './signInPath'
 export * from './fichaMetabolicaPath'
+export * from './getFichaMetabolicaPath'
+export * from './getAlimentosByIDPath'

@@ -16,6 +16,9 @@ export default {
     },
     { 
         name: 'Calculadora'
+    },
+    {
+        name: 'Alimentos'
     }
 ],
 paths,
