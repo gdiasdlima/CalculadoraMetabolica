@@ -1,19 +1,19 @@
 import { GetAllTipoConquistaUseCase } from "../../domain/useCases/getAllTipoConquista";
-import { AlimentoRepository } from "../../infra/repositories/alimentoRepository";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
+import { ITipoConquistaRepository } from "../contracts/repositories/tipoConquista";
 
 export class getAllTipoConquista implements GetAllTipoConquistaUseCase {
 
     constructor(
-        private readonly alimentoRepository: AlimentoRepository
+        private readonly tipoConquista: ITipoConquistaRepository
     ) { }
 
     async getAll(): Promise<any> {
 
-        const alimentos = await this.alimentoRepository.getAll()
+        const alimentos = await this.tipoConquista.getAll()
 
         if (!alimentos) {
-            throw new NotFoundError('Alimentos nao encontrados')
+            throw new NotFoundError('Conquistas')
         }
 
         return alimentos
