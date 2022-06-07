@@ -26,4 +26,11 @@ export class AlimentoRepository implements IAlimentoRepository {
 
         await alimentoRepository.update({ id }, data)
     }
+
+    async getAll(): Promise<Alimento[]> {
+        const alimentoRepository = getRepository(Alimento);
+        const ficha = await alimentoRepository.find()
+        return ficha;
+    }
+
 }

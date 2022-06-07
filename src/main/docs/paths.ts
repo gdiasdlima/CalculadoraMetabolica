@@ -3,7 +3,8 @@ import {
   signUpPath,
   fichaMetabolicaPath,
   getFichaMetabolicaPath,
-  getAlimentosByIDPath
+  getAlimentosByIDPath,
+  getAllAlimentosPath
 } from './paths/'
 
 export default {
@@ -11,5 +12,6 @@ export default {
   '/login/signUp': signUpPath,
   '/fichaMetabolica/Calcular': fichaMetabolicaPath,
   '/fichaMetabolica/Get': getFichaMetabolicaPath,
-  '/alimentos/getByID': getAlimentosByIDPath
+  '/alimentos/getByID': getAlimentosByIDPath,
+  '/alimentos/getAll': getAllAlimentosPath
 }
