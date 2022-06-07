@@ -1,5 +1,4 @@
 import { Alimento } from "../../entities/alimento";
-import { FichaMetabolica } from "../../entities/fichaMetabolica";
 
 export interface IAlimentoRepository {
     create(data: Alimento): Promise<Alimento>
