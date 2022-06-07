@@ -6,23 +6,22 @@ export class ConquistaRepository implements IConquistaRepository {
 
 
     async create(data: Conquista): Promise<Conquista> {
-        const fichaMetabolicaRepository = getRepository(Conquista)
+        const conquistaRepository = getRepository(Conquista)
 
-        return await fichaMetabolicaRepository.save(data)
+        return await conquistaRepository.save(data)
     }
 
-    async findByID(id_pessoa: number): Promise<Conquista> {
-        const fichaMetabolicaRepository = getRepository(Conquista);
-        const ficha = await fichaMetabolicaRepository.findOne({ where: { pessoa: {id : id_pessoa} } });
+    async findByIDPessoa(id_pessoa: number): Promise<Conquista> {
+        const conquistaRepository = getRepository(Conquista);
+        const conquista = await conquistaRepository.findOne({ where: { pessoa: {id : id_pessoa} } });
 
-        return ficha;
+        return conquista;
     }
-
     async update(data: Conquista): Promise<void> {
-        const fichaMetabolicaRepository = getRepository(Conquista);
+        const conquistaRepository = getRepository(Conquista);
 
         const { id } = data
 
-        await fichaMetabolicaRepository.update({ id }, data)
+        await conquistaRepository.update({ id }, data)
     }
 }

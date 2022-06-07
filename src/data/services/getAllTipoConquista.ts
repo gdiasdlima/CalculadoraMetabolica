@@ -10,13 +10,13 @@ export class getAllTipoConquista implements GetAllTipoConquistaUseCase {
 
     async getAll(): Promise<any> {
 
-        const alimentos = await this.tipoConquista.getAll()
+        const conquista = await this.tipoConquista.getAll()
 
-        if (!alimentos) {
+        if (!conquista) {
             throw new NotFoundError('Conquistas')
         }
 
-        return alimentos
+        return conquista
     }
 
 }

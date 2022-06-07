@@ -6,30 +6,30 @@ export class TipoConquistaRepository implements ITipoConquistaRepository {
 
 
     async create(data: TipoConquista): Promise<TipoConquista> {
-        const alimentoRepository = getRepository(TipoConquista)
+        const tipoConquistaRepository = getRepository(TipoConquista)
 
-        return await alimentoRepository.save(data)
+        return await tipoConquistaRepository.save(data)
     }
 
     async findByID(id: number): Promise<TipoConquista> {
-        const alimentoRepository = getRepository(TipoConquista);
-        const ficha = await alimentoRepository.findOne({ where: { id } });
+        const tipoConquistaRepository = getRepository(TipoConquista);
+        const ficha = await tipoConquistaRepository.findOne({ where: { id } });
 
         return ficha;
     }
 
     async update(data: TipoConquista): Promise<void> {
-        const alimentoRepository = getRepository(TipoConquista);
+        const tipoConquistaRepository = getRepository(TipoConquista);
 
         const { id } = data
 
-        await alimentoRepository.update({ id }, data)
+        await tipoConquistaRepository.update({ id }, data)
     }
 
     async getAll(): Promise<TipoConquista[]> {
-        const alimentoRepository = getRepository(TipoConquista);
-        const ficha = await alimentoRepository.find()
-        return ficha;
+        const tipoConquistaRepository = getRepository(TipoConquista);
+        const conquista = await tipoConquistaRepository.find()
+        return conquista;
     }
 
 }
