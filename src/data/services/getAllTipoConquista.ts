@@ -2,7 +2,7 @@ import { GetAllTipoConquistaUseCase } from "../../domain/useCases/getAllTipoConq
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { ITipoConquistaRepository } from "../contracts/repositories/tipoConquista";
 
-export class GetAllTipoConquista implements GetAllTipoConquistaUseCase {
+export class GetAllTipoConquistaService implements GetAllTipoConquistaUseCase {
 
     constructor(
         private readonly tipoConquista: ITipoConquistaRepository
