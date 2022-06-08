@@ -22,7 +22,10 @@ export default {
     },
     {
         name: 'Tipo Conquista'
-    }
+    },
+    {
+        name: 'Conquista'
+    },
 ],
 paths,
 schemas

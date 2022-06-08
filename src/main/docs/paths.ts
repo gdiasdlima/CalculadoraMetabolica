@@ -5,7 +5,8 @@ import {
   getFichaMetabolicaPath,
   getAlimentosByIDPath,
   getAllAlimentosPath,
-  getAllTipoConquistaPath
+  getAllTipoConquistaPath,
+  getConquistaByIDPath
 } from './paths/'
 
 export default {
@@ -15,5 +16,6 @@ export default {
   '/fichaMetabolica/Get': getFichaMetabolicaPath,
   '/alimentos/getByID': getAlimentosByIDPath,
   '/alimentos/getAll': getAllAlimentosPath,
-  '/tipoConquista/GetAll': getAllTipoConquistaPath
+  '/tipoConquista/GetAll': getAllTipoConquistaPath,
+  '/conquista/GetByID': getConquistaByIDPath
 }
