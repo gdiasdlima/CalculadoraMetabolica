@@ -4,7 +4,7 @@ import { PessoaRepository } from "../../../infra/repositories/pessoaRepository"
 import { GetConquistaByIDController } from "../../../presentation/controllers/getConquistaByIDController"
 import { makeGetConquistaByIDValidator } from "../validations/getConquistaByIDValidatorFactory"
 
-export const MakeGetAlimentoByIDController = (): GetConquistaByIDController => {
+export const MakeGetConquistaByIDController = (): GetConquistaByIDController => {
     const conquistaRepository = new ConquistaRepository()
     const pessoaRepository = new PessoaRepository()
     const getConquistaByIDService = new GetConquistaByIDService(conquistaRepository, pessoaRepository)
