@@ -5,7 +5,7 @@ import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IConquistaRepository } from "../contracts/repositories/conquista";
 import { IPessoaRepository } from "../contracts/repositories/pessoa";
 
-export class GetConquistaByID implements GetConquistaByIDUseCase {
+export class GetConquistaByIDService implements GetConquistaByIDUseCase {
 
     constructor(
         private readonly conquistaRepository: IConquistaRepository,
