@@ -19,6 +19,9 @@ export default {
     },
     {
         name: 'Alimentos'
+    },
+    {
+        name: 'Tipo Conquista'
     }
 ],
 paths,
