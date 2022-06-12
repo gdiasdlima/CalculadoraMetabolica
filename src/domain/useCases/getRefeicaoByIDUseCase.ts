@@ -1,3 +1,3 @@
-export interface GetRefeicaoByIDUseCase {
-    getByID(id: number): Promise<any>
+export interface GetRefeicaoUseCase {
+    getByID(idPessoa: number, idTipoRefeicao: number, data: Date): Promise<any>
 }
