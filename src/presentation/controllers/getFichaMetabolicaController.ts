@@ -1,4 +1,3 @@
-import { FichaMetabolicaUseCase } from "../../domain/useCases/fichaMetabolicaUseCase";
 import { GetFichaMetabolicaUseCase } from "../../domain/useCases/getMetabolicaUseCase";
 import { Validator } from "../../validation/validator";
 import { Controller } from "../contracts/controller";
