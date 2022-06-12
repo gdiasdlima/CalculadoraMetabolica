@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryGeneratedColu
 import { Pessoa } from './pessoa';
 
 @Entity('refeicao')
-export class TipoConquista {
+export class Refeicao {
   @PrimaryGeneratedColumn('increment')
   id: number
 
