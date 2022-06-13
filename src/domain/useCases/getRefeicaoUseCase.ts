@@ -1,3 +1,5 @@
+import { Refeicao } from "../../data/entities/refeicao";
+
 export interface GetRefeicaoUseCase {
-    getByID(idPessoa: number, idTipoRefeicao: number, data: Date): Promise<any>
+    get(data : Refeicao): Promise<any>
 }

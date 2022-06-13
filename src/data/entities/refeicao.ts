@@ -1,5 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { Pessoa } from './pessoa';
+import { TipoRefeicao } from './tipoRefeicao';
 
 @Entity('refeicao')
 export class Refeicao {
@@ -9,6 +10,10 @@ export class Refeicao {
   @ManyToMany(() => Pessoa)
   @JoinColumn({name : 'id_pessoa'})
   pessoa: Pessoa;
+  
+  @ManyToMany(() => TipoRefeicao)
+  @JoinColumn({name : 'id_tipo_refeicao'})
+  tipoRefeicao: TipoRefeicao;
   
   @Column()
   kcal: number  
