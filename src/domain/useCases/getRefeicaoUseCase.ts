@@ -1,5 +1,5 @@
-import { Refeicao } from "../../data/entities/refeicao";
+import { GetRefeicaoModel } from "../models/getRefeicaoModel";
 
 export interface GetRefeicaoUseCase {
-    get(data : Refeicao): Promise<any>
+    get(data : GetRefeicaoModel): Promise<any>
 }

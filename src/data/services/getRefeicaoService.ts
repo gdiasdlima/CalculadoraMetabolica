@@ -1,9 +1,8 @@
+import { GetRefeicaoModel } from "../../domain/models/getRefeicaoModel";
 import { GetRefeicaoUseCase } from "../../domain/useCases/getRefeicaoUseCase";
 import { RefeicaoRepository } from "../../infra/repositories/refeicaoRepository";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IPessoaRepository } from "../contracts/repositories/pessoa";
-import { Pessoa } from "../entities/pessoa";
-import { Refeicao } from "../entities/refeicao";
 
 export class GetRefeicaoService implements GetRefeicaoUseCase {
 
@@ -13,15 +12,15 @@ export class GetRefeicaoService implements GetRefeicaoUseCase {
 
     ) { }
 
-    async get(data: Refeicao): Promise<any> {
+    async get(data: GetRefeicaoModel): Promise<any> {
 
 
-        const pessoa = await this.pessoaRepository.findByID(data.pessoa.id);
+        const pessoa = await this.pessoaRepository.findByID(data.idPessoa);
         if (!pessoa) {
             return new NotFoundError('pessoa')
         }
 
-        const refeicao = await this.refeicaoRepository.findByIDPessoa(data)
+        const refeicao = await this.refeicaoRepository.findByRefeicao(data)
 
         return refeicao
     }
