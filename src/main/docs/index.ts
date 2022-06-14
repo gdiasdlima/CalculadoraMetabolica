@@ -26,6 +26,9 @@ export default {
     {
         name: 'Conquista'
     },
+    {
+        name: 'Refeicao'
+    }
 ],
 paths,
 schemas
