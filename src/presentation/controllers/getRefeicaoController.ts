@@ -11,13 +11,13 @@ export class GetRefeicaoController implements Controller {
     constructor(private readonly validator: Validator, private readonly getRefeicaoUseCase: GetRefeicaoUseCase) { }
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
-            const error = this.validator.validate(httpRequest.body)
+            const error = this.validator.validate(httpRequest.query)
 
             if (error) {
                 return badRequest(error)
             }
 
-            const { idPessoa, idTipoRefeicao, dataRefeicao } = httpRequest.body
+            const { idPessoa, idTipoRefeicao, dataRefeicao } = httpRequest.query
 
             const refeicao = await this.getRefeicaoUseCase.get({ idPessoa,
                 idTipoRefeicao,

@@ -7,11 +7,11 @@ export class Refeicao {
   @PrimaryGeneratedColumn('increment')
   id: number
 
-  @ManyToMany(() => Pessoa)
+  @ManyToOne(() => Pessoa)
   @JoinColumn({name : 'id_pessoa'})
   pessoa: Pessoa;
   
-  @ManyToMany(() => TipoRefeicao)
+  @ManyToOne(() => TipoRefeicao)
   @JoinColumn({name : 'id_tipo_refeicao'})
   tipoRefeicao: TipoRefeicao;
   

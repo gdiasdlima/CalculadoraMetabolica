@@ -1,5 +1,5 @@
 export * from './signInParams'
 export * from './signUpParams'
 export * from './FichaMetabolica'
-export * from './getRefeicao'
-export * from './createRefeicao'
+export * from './getRefeicaoParams'
+export * from './createRefeicaoParams'

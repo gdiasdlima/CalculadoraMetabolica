@@ -7,7 +7,7 @@ export const createRefeicaoPath = {
         content: {
           'application/json': {
             schema: {
-              $ref: '#/schemas/CreateRefeicaoParamsSchema'
+              $ref: '#/schemas/createRefeicaoParams'
             }
           }
         }

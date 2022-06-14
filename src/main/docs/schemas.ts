@@ -1,11 +1,15 @@
 import {
   signInParamsSchema,
   signUpParamsSchema,
-  FichaMetabolicaParamsSchema
+  FichaMetabolicaParamsSchema,
+  GetRefeicaoParamsSchema,
+  CreateRefeicaoParamsSchema
 } from './schemas/'
 
 export default {
   signUpParams: signUpParamsSchema,
   signInParams: signInParamsSchema,
-  fichaMetabolicaParams: FichaMetabolicaParamsSchema
+  fichaMetabolicaParams: FichaMetabolicaParamsSchema,
+  getRefeicaoParams: GetRefeicaoParamsSchema,
+  createRefeicaoParams: CreateRefeicaoParamsSchema
 }
