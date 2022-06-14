@@ -1,12 +1,13 @@
 import { getRepository } from "typeorm";
 import { IRefeicaoRepository } from "../../data/contracts/repositories/refeicao";
 import { Refeicao } from "../../data/entities/refeicao";
+import { CreateRefeicaoModel } from "../../domain/models/createRefeicaoModel";
 import { GetRefeicaoModel } from "../../domain/models/getRefeicaoModel";
 
 export class RefeicaoRepository implements IRefeicaoRepository {
 
 
-    async create(data: Refeicao): Promise<Refeicao> {
+    async create(data: CreateRefeicaoModel): Promise<Refeicao> {
         const refeicaoRepository = getRepository(Refeicao)
 
         return await refeicaoRepository.save(data)

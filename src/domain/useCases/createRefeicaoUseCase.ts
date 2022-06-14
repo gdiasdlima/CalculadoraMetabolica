@@ -1,5 +1,5 @@
-import { Refeicao } from "../../data/entities/refeicao";
+import { CreateRefeicaoModel } from "../models/createRefeicaoModel";
 
 export interface CreateRefeicaoUseCase {
-    create(data: Refeicao): Promise<any>
+    create(data: CreateRefeicaoModel): Promise<any>
 }

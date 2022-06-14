@@ -1,3 +1,4 @@
+import { CreateRefeicaoUseCase } from "../../domain/useCases/createRefeicaoUseCase";
 import { GetFichaMetabolicaUseCase } from "../../domain/useCases/getMetabolicaUseCase";
 import { GetRefeicaoUseCase } from "../../domain/useCases/getRefeicaoUseCase";
 import { Validator } from "../../validation/validator";
@@ -7,8 +8,8 @@ import { badRequest, serverError, success, unauthorized  } from "../contracts/ht
 import { NotFoundError } from "../errors/NotFoundError";
 import { UnauthorizedError } from "../errors/unauthorizedError";
 
-export class GetRefeicaoController implements Controller {
-    constructor(private readonly validator: Validator, private readonly getRefeicaoUseCase: GetRefeicaoUseCase) { }
+export class CreateRefeicaoController implements Controller {
+    constructor(private readonly validator: Validator, private readonly createRefeicaoUseCase: CreateRefeicaoUseCase) { }
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
             const error = this.validator.validate(httpRequest.body)
@@ -17,11 +18,15 @@ export class GetRefeicaoController implements Controller {
                 return badRequest(error)
             }
 
-            const { idPessoa, idTipoRefeicao, dataRefeicao } = httpRequest.body
+            const { idPessoa, idTipoRefeicao, dataRefeicao, carb, proteina, gordura, kcal } = httpRequest.body
 
-            const refeicao = await this.getRefeicaoUseCase.get({ idPessoa,
+            const refeicao = await this.createRefeicaoUseCase.create({ idPessoa,
                 idTipoRefeicao,
-                dataRefeicao
+                dataRefeicao,
+                carb,
+                proteina,
+                gordura,
+                kcal
                 })
 
             if (refeicao instanceof NotFoundError || refeicao instanceof UnauthorizedError) {
