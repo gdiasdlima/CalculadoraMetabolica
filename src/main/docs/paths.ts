@@ -7,7 +7,9 @@ import {
   getAllAlimentosPath,
   getAllTipoConquistaPath,
   getConquistaByIDPath,
-  getRefeicaoPath
+  getRefeicaoPath,
+  createRefeicaoPath,
+
 } from './paths/'
 
 export default {
@@ -20,4 +22,5 @@ export default {
   '/tipoConquista/GetAll': getAllTipoConquistaPath,
   '/conquista/GetByID': getConquistaByIDPath,
   '/refeicao/Get': getRefeicaoPath,
+  '/refeicao/Create': createRefeicaoPath
 }

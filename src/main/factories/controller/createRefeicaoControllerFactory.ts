@@ -6,6 +6,6 @@ import { CreateRefeicaoController } from "../../../presentation/controllers/crea
 export const makeCreateRefeicaoControllerFactory = (): CreateRefeicaoController => {
     const pessoaRepository = new PessoaRepository()
     const refeicaoRepository = new RefeicaoRepository()
-    const getRefeicaoService = new CreateRefeicaoService(refeicaoRepository, pessoaRepository)
-    return new CreateRefeicaoController(null, getRefeicaoService)
+    const createRefeicaoService = new CreateRefeicaoService(refeicaoRepository, pessoaRepository)
+    return new CreateRefeicaoController(null, createRefeicaoService)
 }
