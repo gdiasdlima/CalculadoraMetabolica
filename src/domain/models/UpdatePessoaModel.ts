@@ -2,7 +2,7 @@ export interface UpdatePessoaModel {
     idPessoa: number
     pesoObj: number
     pesoAtual: number
-    Objetivo: number
+    objetivo: number
     dataNascimento: Date
     sexo : string
     nome : string
