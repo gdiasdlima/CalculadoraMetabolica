@@ -21,7 +21,6 @@ export class GetAllAlimentosController implements Controller {
             return success(alimentos)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

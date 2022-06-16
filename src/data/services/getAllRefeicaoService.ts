@@ -1,13 +1,14 @@
-import { GetRefeicaoModel } from "../../domain/models/getRefeicaoModel";
-import { GetRefeicaoUseCase } from "../../domain/useCases/getRefeicaoUseCase";
+import { GetAllRefeicaoModel } from "../../domain/models/getAllRefeicaoModel";
+import { GetAllRefeicaoUseCase } from "../../domain/useCases/getAllRefeicaoUseCase";
+import { RefeicaoRepository } from "../../infra/repositories/refeicaoRepository";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
+import { UnauthorizedError } from "../../presentation/errors/unauthorizedError";
 import { IPessoaRepository } from "../contracts/repositories/pessoa";
 import { IRefeicaoRepository } from "../contracts/repositories/refeicao";
 import { Pessoa } from "../entities/pessoa";
 import { Refeicao } from "../entities/refeicao";
-import { TipoRefeicao } from "../entities/tipoRefeicao";
 
-export class GetRefeicaoService implements GetRefeicaoUseCase {
+export class GetAllRefeicaoService implements GetAllRefeicaoUseCase {
 
     constructor(
         private readonly refeicaoRepository: IRefeicaoRepository,
@@ -15,21 +16,23 @@ export class GetRefeicaoService implements GetRefeicaoUseCase {
 
     ) { }
 
-    async get(data: GetRefeicaoModel): Promise<any> {
-
+    async getAll(data: GetAllRefeicaoModel): Promise<any> {
 
         const pessoa = await this.pessoaRepository.findByID(data.idPessoa);
         if (!pessoa) {
-            return new NotFoundError('pessoa')
+            return new UnauthorizedError()
         }
+   
         const refeicao = new Refeicao()
         refeicao.pessoa = new Pessoa()
-        refeicao.tipoRefeicao = new TipoRefeicao()
         refeicao.pessoa.id = data.idPessoa
-        refeicao.tipoRefeicao.id = data.idTipoRefeicao
         refeicao.data_refeicao = new Date(data.dataRefeicao)
-        const reponse = await this.refeicaoRepository.findByRefeicao(refeicao)
+        const reponse = await this.refeicaoRepository.getAllRefeicao(refeicao)
+        console.log(data)
+        console.log(refeicao)
+        console.log(reponse[0])
         return reponse
+
     }
 
 }

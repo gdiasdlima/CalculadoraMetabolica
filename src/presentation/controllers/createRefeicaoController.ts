@@ -18,11 +18,10 @@ export class CreateRefeicaoController implements Controller {
                 return badRequest(error)
             }
 
-            const { idPessoa, idTipoRefeicao, dataRefeicao, carb, proteina, gordura, kcal } = httpRequest.body
+            const { idPessoa, idTipoRefeicao, carb, proteina, gordura, kcal } = httpRequest.body
 
             const refeicao = await this.createRefeicaoUseCase.create({ idPessoa,
                 idTipoRefeicao,
-                dataRefeicao,
                 carb,
                 proteina,
                 gordura,
@@ -36,7 +35,6 @@ export class CreateRefeicaoController implements Controller {
             return success(refeicao)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

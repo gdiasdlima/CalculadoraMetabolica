@@ -13,7 +13,7 @@ export class LoginRepository implements ILoginRepository {
     
     async findByEmail(email: string): Promise<Login> {
         const loginRepository = getRepository(Login);
-        const login = await loginRepository.findOne({ where: { email }, relations: ['pessoa'] });
+        const login = await loginRepository.findOne({ where: { email }, relations: ['pessoa', 'pessoa.objetivo'] });
 
         return login;
     }

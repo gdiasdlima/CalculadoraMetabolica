@@ -22,7 +22,6 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
             return new NotFoundError('pessoa')
         }
 
-        console.log(pessoa)
         const idade = this.retornarIdade.retornar(new Date(pessoa.data_nascimento), new Date())
 
         let tmb, ndc, imc, percentual
@@ -70,7 +69,6 @@ export class FichaMetabolicaService implements FichaMetabolicaUseCase {
         ficha.data_calculo = new Date()
         
         
-        console.log(ficha)
 
         await this.fichaMetabolicaRepository.create(ficha)
         return ficha 

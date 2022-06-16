@@ -17,8 +17,7 @@ export class CreateRefeicaoService implements CreateRefeicaoUseCase {
 
     async create(data: CreateRefeicaoModel): Promise<any> {
         
-        console.log(data.idPessoa)
-
+        console.log(data)
         const pessoa = await this.pessoaRepository.findByID(data.idPessoa);
         if (!pessoa) {
             return new NotFoundError('pessoa')
@@ -34,7 +33,6 @@ export class CreateRefeicaoService implements CreateRefeicaoUseCase {
         refeicao.proteina = data.proteina
         refeicao.data_refeicao = new Date()
         refeicao.tipoRefeicao.id = data.idTipoRefeicao
-        // console.log(refeicao)
         await this.refeicaoRepository.create(refeicao)
 
         return refeicao

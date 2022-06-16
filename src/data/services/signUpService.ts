@@ -24,7 +24,7 @@ export class SignUpService implements SignUpUseCase {
     ) { }
 
     async create(data: SignUpRequestModel): Promise<any> {
-    
+
         const alreadyLogin = await this.loginRepository.findByEmail(data.email);
 
         if (alreadyLogin) {
@@ -46,25 +46,22 @@ export class SignUpService implements SignUpUseCase {
         pessoa.sexo = data.sexo
         pessoa.atividadeFisica.id = data.atividadeFisica
         pessoa.objetivo.id = data.objetivo
-        pessoa.circunferencia = data.circunferencia
+        pessoa.circunferencia = 0
         pessoa.peso_objetivo = data.pesoObjetivo
         const pessoaCreated = await this.pessoaRepository.create(pessoa)
 
-        console.log(pessoaCreated)
         const login = new Login()
         login.pessoa = new Pessoa()
-        login.pessoa =  pessoaCreated
+        login.pessoa = pessoaCreated
         login.senha = password
         login.email = data.email
         login.ativo = 'S'
         login.data_alteracao = new Date()
         const loginCreated = await this.loginRepository.create(login)
 
-        // console.log('login' + loginCreated)
 
         const idade = this.retornarIdade.retornar(new Date(pessoa.data_nascimento), new Date())
 
-        console.log(idade)
         let tmb, ndc, imc, proteina, carbo, gordura
 
         if (data.sexo === "M") {
@@ -98,9 +95,9 @@ export class SignUpService implements SignUpUseCase {
 
         switch (data.objetivo) {
             case 1:
-               proteina = data.peso * 2
-               carbo = data.peso * 3
-               gordura = data.peso
+                proteina = data.peso * 2
+                carbo = data.peso * 3
+                gordura = data.peso
                 break;
             case 2:
                 proteina = data.peso * 2
@@ -123,16 +120,15 @@ export class SignUpService implements SignUpUseCase {
         ficha.ndc = ndc
         ficha.imc = imc
         ficha.gasto_semanal = ndc * 7
-         ficha.percentual_gordura = 20
+        ficha.percentual_gordura = 20
         ficha.data_calculo = new Date()
         ficha.proteina = proteina
         ficha.carboidrato = carbo
         ficha.gordura = gordura
 
-        // console.log('ficha'+ficha)
         return await this.fichaMetabolicaRepository.create(ficha)
 
-        
+
 
 
     }

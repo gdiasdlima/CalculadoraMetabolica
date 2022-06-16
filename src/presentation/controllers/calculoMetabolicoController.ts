@@ -27,7 +27,6 @@ export class CalculoMetabolicoController implements Controller {
             return success(calculo)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

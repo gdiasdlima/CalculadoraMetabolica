@@ -27,7 +27,6 @@ export class GetConquistaByIDController implements Controller {
             return success(conquista)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

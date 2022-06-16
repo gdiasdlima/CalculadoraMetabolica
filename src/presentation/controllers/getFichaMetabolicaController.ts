@@ -27,7 +27,6 @@ export class GetFichaMetabolicaController implements Controller {
             return success(ficha)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

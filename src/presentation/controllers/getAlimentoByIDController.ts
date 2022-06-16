@@ -28,7 +28,6 @@ export class GetAlimentoByIDController implements Controller {
             return success(ficha)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

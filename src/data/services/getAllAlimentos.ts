@@ -16,7 +16,6 @@ export class GetAllAlimentosService implements GetAllAlimentosUseCase {
         if (!alimentos) {
             throw new NotFoundError('Alimentos nao encontrados')
         }
-
         return alimentos
     }
 

@@ -31,7 +31,6 @@ export class GetRefeicaoController implements Controller {
             return success(refeicao)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

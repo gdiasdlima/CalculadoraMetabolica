@@ -18,7 +18,6 @@ export class GetAllTipoConquistaController implements Controller {
             return success(conquistas)
 
         } catch (error) {
-            console.log(error.message)
             return serverError()
         }
     }

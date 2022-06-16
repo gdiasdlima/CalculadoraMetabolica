@@ -1,3 +1,5 @@
-export interface GetAllAlimentosUseCase {
-    getAll(): Promise<any>
+import { GetAllRefeicaoModel } from "../models/getAllRefeicaoModel";
+
+export interface GetAllRefeicaoUseCase {
+    getAll(data: GetAllRefeicaoModel): Promise<any>
 }
