@@ -28,6 +28,9 @@ export default {
     },
     {
         name: 'Refeicao'
+    },
+    {
+        name: 'Pessoa'
     }
 ],
 paths,
