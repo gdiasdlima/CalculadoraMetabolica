@@ -1,12 +1,7 @@
-
 import { UpdatePessoaModel } from "../../domain/models/UpdatePessoaModel";
 import { UpdatePessoaUseCase } from "../../domain/useCases/updatePessoaUseCase";
-import { AlreadyExistsError } from "../../presentation/errors/alreadyExistsError";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IPessoaRepository } from "../contracts/repositories/pessoa";
-import { AtividadeFisica } from "../entities/atividadeFisica";
-import { FichaMetabolica } from "../entities/fichaMetabolica";
-import { Login } from "../entities/login";
 import { Objetivo } from "../entities/objetivo";
 import { Pessoa } from "../entities/pessoa";
 
