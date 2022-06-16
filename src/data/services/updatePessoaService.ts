@@ -32,7 +32,7 @@ export class UpdatePessoaService implements UpdatePessoaUseCase {
         pessoa.telefone = 'nao'
         pessoa.cpf = 'nao'
         pessoa.sexo = data.sexo
-        pessoa.objetivo.id = data.Objetivo
+        pessoa.objetivo.id = data.objetivo
         pessoa.peso_objetivo = data.pesoObj
         const response = await this.pessoaRepository.update(pessoa)
 
