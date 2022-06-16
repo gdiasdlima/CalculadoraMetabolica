@@ -3,7 +3,8 @@ import {
   signUpParamsSchema,
   FichaMetabolicaParamsSchema,
   GetRefeicaoParamsSchema,
-  CreateRefeicaoParamsSchema
+  CreateRefeicaoParamsSchema,
+  UpdatePessoaParamsSchema
 } from './schemas/'
 
 export default {
@@ -11,5 +12,6 @@ export default {
   signInParams: signInParamsSchema,
   fichaMetabolicaParams: FichaMetabolicaParamsSchema,
   getRefeicaoParams: GetRefeicaoParamsSchema,
-  createRefeicaoParams: CreateRefeicaoParamsSchema
+  createRefeicaoParams: CreateRefeicaoParamsSchema,
+  updatePessoaParams: UpdatePessoaParamsSchema
 }

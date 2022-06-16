@@ -7,7 +7,7 @@ export const updatePessoaPath = {
         content: {
           'application/json': {
             schema: {
-              $ref: '#/schemas/signUpParams'
+              $ref: '#/schemas/updatePessoaParams'
             }
           }
         }
