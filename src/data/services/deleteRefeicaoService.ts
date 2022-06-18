@@ -7,7 +7,7 @@ import { Pessoa } from '../entities/pessoa'
 import { Refeicao } from '../entities/refeicao'
 import { TipoRefeicao } from '../entities/tipoRefeicao'
 
-export class DeleteCobrancaParticipanteService implements DeleteRefeicaoUseCase {
+export class DeleteRefeicaoService implements DeleteRefeicaoUseCase {
     constructor(private readonly refeicaoRepository: IRefeicaoRepository,
         private readonly pessoaRepository: PessoaRepository
     ) { }
