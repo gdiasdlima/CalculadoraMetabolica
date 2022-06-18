@@ -4,7 +4,7 @@ import { UpdateRefeicaoService } from "../../../data/services/updateRefeicaoServ
 import { RefeicaoRepository } from "../../../infra/repositories/refeicaoRepository"
 import { makeUpdateRefeicaoValidator } from "../validations/updateRefeicaoControllerFactory"
 
-export const MakeUpdateRefeicaoController = (): UpdateRefeicaoController => {
+export const MakeUpdateRefeicaoControllerFactory = (): UpdateRefeicaoController => {
     const pessoaRepository = new PessoaRepository()
     const refeicaoRepository = new RefeicaoRepository()
     const updateRefeicaoSerice = new UpdateRefeicaoService(pessoaRepository, refeicaoRepository)

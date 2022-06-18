@@ -4,7 +4,7 @@ import { DeleteRefeicaoController } from "../../../presentation/controllers/dele
 import { DeleteRefeicaoService } from "../../../data/services/deleteRefeicaoService"
 import { makeDeleteRefeicaoValidator } from "../validations/deleteRefeicaoControllerFactory"
 
-export const MakeDeleteRefeicaoController = (): DeleteRefeicaoController => {
+export const MakeDeleteRefeicaoControllerFactory = (): DeleteRefeicaoController => {
     const pessoaRepository = new PessoaRepository()
     const refeicaoRepository = new RefeicaoRepository()
     const deleteRefeicaoSerice = new DeleteRefeicaoService(refeicaoRepository, pessoaRepository)
