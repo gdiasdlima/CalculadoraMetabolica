@@ -11,6 +11,8 @@ import {
   createRefeicaoPath,
   getAllRefeicaoPath,
   updatePessoaPath,
+  updateRefeicaoPath,
+  deleteRefeicaoPath
 } from './paths/'
 
 export default {
@@ -25,5 +27,7 @@ export default {
   '/refeicao/Get': getRefeicaoPath,
   '/refeicao/Create': createRefeicaoPath,
   '/refeicao/GetAll': getAllRefeicaoPath,
-  '/pessoa/Update': updatePessoaPath
+  '/pessoa/Update': updatePessoaPath,
+  '/refeicao/delete': deleteRefeicaoPath,
+  '/refeicao/update': updateRefeicaoPath,
 }
