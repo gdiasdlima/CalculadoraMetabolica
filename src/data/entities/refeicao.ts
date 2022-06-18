@@ -34,5 +34,8 @@ export class Refeicao {
   gordura: number  
 
   @Column()
+  gramas: number  
+
+  @Column()
   data_refeicao: Date  
 }
