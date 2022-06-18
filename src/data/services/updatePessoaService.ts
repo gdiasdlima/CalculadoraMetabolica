@@ -14,21 +14,21 @@ export class UpdatePessoaService implements UpdatePessoaUseCase {
     async update(data: UpdatePessoaModel): Promise<any> {
 
         const Alreadypessoa = await this.pessoaRepository.findByID(data.idPessoa);
-
-        if (Alreadypessoa) {
+        console.log(data)
+        if (!Alreadypessoa) {
             return new NotFoundError('pessoa');
         }
 
         const pessoa = new Pessoa()
         pessoa.objetivo = new Objetivo()
-        pessoa.nome = data.nome
-        pessoa.data_nascimento = data.dataNascimento
-        pessoa.peso_atual = data.pesoAtual
-        pessoa.telefone = 'nao'
-        pessoa.cpf = 'nao'
-        pessoa.sexo = data.sexo
-        pessoa.objetivo.id = data.objetivo
-        pessoa.peso_objetivo = data.pesoObj
+        pessoa.id = data.idPessoa
+        pessoa.nome = data.nome ? data.nome : Alreadypessoa.nome
+        pessoa.data_nascimento = data.dataNascimento ? data.dataNascimento : Alreadypessoa.data_nascimento 
+        pessoa.peso_atual = data.pesoAtual ? data.pesoAtual : Alreadypessoa.peso_atual
+        pessoa.sexo = data.sexo ? data.sexo : Alreadypessoa.sexo
+        pessoa.objetivo.id = data.objetivo ? data.objetivo : Alreadypessoa.objetivo.id
+        pessoa.peso_objetivo = data.pesoObj ? data.pesoObj : Alreadypessoa.peso_objetivo
+        console.log(pessoa)
         const response = await this.pessoaRepository.update(pessoa)
 
         return response

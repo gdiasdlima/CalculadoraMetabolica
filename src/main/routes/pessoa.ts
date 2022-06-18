@@ -4,6 +4,6 @@ import { MakeUpdatePessoaController } from "../factories/controller/UpdatePessoa
 
 export default (router: Router): void => {
 
-    router.post('/pessoa/Update', adaptRouter(MakeUpdatePessoaController()))
+    router.put('/pessoa/Update', adaptRouter(MakeUpdatePessoaController()))
 
 }

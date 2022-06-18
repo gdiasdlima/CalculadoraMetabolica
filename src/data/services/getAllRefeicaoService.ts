@@ -26,11 +26,8 @@ export class GetAllRefeicaoService implements GetAllRefeicaoUseCase {
         const refeicao = new Refeicao()
         refeicao.pessoa = new Pessoa()
         refeicao.pessoa.id = data.idPessoa
-        refeicao.data_refeicao = new Date(data.dataRefeicao)
+        refeicao.data_refeicao = data.dataRefeicao
         const reponse = await this.refeicaoRepository.getAllRefeicao(refeicao)
-        console.log(data)
-        console.log(refeicao)
-        console.log(reponse[0])
         return reponse
 
     }

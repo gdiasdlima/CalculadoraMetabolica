@@ -1,5 +1,5 @@
 export const updatePessoaPath = {
-    post: {
+    put: {
       tags: ['Pessoa'],
       summary: 'API para atualizar Pessoa',
       requestBody: {

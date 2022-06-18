@@ -1,4 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import alimentos from '../../main/routes/alimentos';
+import { Alimento } from './alimento';
 import { Pessoa } from './pessoa';
 import { TipoRefeicao } from './tipoRefeicao';
 
@@ -14,6 +16,10 @@ export class Refeicao {
   @ManyToOne(() => TipoRefeicao)
   @JoinColumn({name : 'id_tipo_refeicao'})
   tipoRefeicao: TipoRefeicao;
+
+  @ManyToOne(() => Alimento)
+  @JoinColumn({name : 'id_alimento'})
+  alimento: Alimento;
   
   @Column()
   kcal: number  

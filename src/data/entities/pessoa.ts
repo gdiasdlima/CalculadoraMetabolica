@@ -15,12 +15,12 @@ export class Pessoa {
 
     @Column()
     cpf: string
+    
+    @Column()
+    data_nascimento: Date
 
     @Column()
     sexo: string
-
-    @Column()
-    data_nascimento: Date
 
     @OneToOne(() => AtividadeFisica)
     @JoinColumn({ name: 'id_atividade_fisica' })
