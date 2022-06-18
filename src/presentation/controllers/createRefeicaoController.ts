@@ -18,14 +18,15 @@ export class CreateRefeicaoController implements Controller {
                 return badRequest(error)
             }
 
-            const { idPessoa, idTipoRefeicao, carb, proteina, gordura, kcal } = httpRequest.body
+            const { idPessoa, idTipoRefeicao, carb, proteina, gordura, kcal, idAlimento } = httpRequest.body
 
             const refeicao = await this.createRefeicaoUseCase.create({ idPessoa,
                 idTipoRefeicao,
                 carb,
                 proteina,
                 gordura,
-                kcal
+                kcal,
+                idAlimento
                 })
 
             if (refeicao instanceof NotFoundError || refeicao instanceof UnauthorizedError) {

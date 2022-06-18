@@ -5,4 +5,5 @@ export interface CreateRefeicaoModel {
     carb: number
     proteina: number
     gordura: number 
+    idAlimento: number
 }

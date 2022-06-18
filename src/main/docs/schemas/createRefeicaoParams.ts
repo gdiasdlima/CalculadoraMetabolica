@@ -7,6 +7,9 @@ export const CreateRefeicaoParamsSchema = {
       idTipoRefeicao: {
         type: 'number'
       },
+      idAlimento: {
+        type: 'number'
+      },
       kcal: {
         type: 'number'
       },
@@ -21,7 +24,8 @@ export const CreateRefeicaoParamsSchema = {
       },
       dataRefeicao: {
         type: 'string',
-        format: 'date'      }
+        format: 'date' 
+      }
     },
     required: ['idPessoa', 'idTipoRefeicao', 'dataRefeicao', 'kcal', 'carb', 'proteina', 'gordura', 'dataRefeicao']
   }

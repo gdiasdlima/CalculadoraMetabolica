@@ -3,6 +3,7 @@ import { CreateRefeicaoUseCase } from "../../domain/useCases/createRefeicaoUseCa
 import { RefeicaoRepository } from "../../infra/repositories/refeicaoRepository";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IPessoaRepository } from "../contracts/repositories/pessoa";
+import { Alimento } from "../entities/alimento";
 import { Pessoa } from "../entities/pessoa";
 import { Refeicao } from "../entities/refeicao";
 import { TipoRefeicao } from "../entities/tipoRefeicao";
@@ -26,6 +27,7 @@ export class CreateRefeicaoService implements CreateRefeicaoUseCase {
         const refeicao = new Refeicao()
         refeicao.pessoa = new Pessoa()
         refeicao.tipoRefeicao = new TipoRefeicao()
+        refeicao.alimento = new Alimento()
         refeicao.pessoa.id = data.idPessoa
         refeicao.carb = data.carb
         refeicao.gordura = data.gordura
@@ -33,6 +35,7 @@ export class CreateRefeicaoService implements CreateRefeicaoUseCase {
         refeicao.proteina = data.proteina
         refeicao.data_refeicao = new Date()
         refeicao.tipoRefeicao.id = data.idTipoRefeicao
+        refeicao.alimento.id = data.idAlimento
         await this.refeicaoRepository.create(refeicao)
 
         return refeicao
