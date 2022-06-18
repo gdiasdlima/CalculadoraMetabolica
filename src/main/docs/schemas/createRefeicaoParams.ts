@@ -22,11 +22,10 @@ export const CreateRefeicaoParamsSchema = {
       proteina: {
         type: 'number'
       },
-      dataRefeicao: {
-        type: 'string',
-        format: 'date' 
-      }
+      gramas: {
+        type: 'number'
+      },
     },
-    required: ['idPessoa', 'idTipoRefeicao', 'dataRefeicao', 'kcal', 'carb', 'proteina', 'gordura', 'dataRefeicao']
+    required: ['idPessoa', 'idTipoRefeicao', 'dataRefeicao', 'kcal', 'carb', 'proteina', 'gordura']
   }
   

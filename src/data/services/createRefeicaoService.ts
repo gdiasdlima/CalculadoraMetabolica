@@ -36,6 +36,7 @@ export class CreateRefeicaoService implements CreateRefeicaoUseCase {
         refeicao.data_refeicao = new Date()
         refeicao.tipoRefeicao.id = data.idTipoRefeicao
         refeicao.alimento.id = data.idAlimento
+        refeicao.gramas = data.gramas
         await this.refeicaoRepository.create(refeicao)
 
         return refeicao
