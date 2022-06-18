@@ -1,5 +1,5 @@
-export const deleteRefeicaoPath = {
-    post: {
+export const updateRefeicaoPath = {
+    put: {
       tags: ['Refeicao'],
       summary: 'API para controlar Refeicao',
       requestBody: {
@@ -7,7 +7,7 @@ export const deleteRefeicaoPath = {
         content: {
           'application/json': {
             schema: {
-              $ref: '#/schemas/deleteRefeicaoParams'
+              $ref: '#/schemas/updateRefeicaoParams'
             }
           }
         }
