@@ -12,12 +12,13 @@ export class RefeicaoRepository implements IRefeicaoRepository {
 
     async findByRefeicao(data: Refeicao): Promise<Refeicao> {
         const refeicaoRepository = getRepository(Refeicao);
-        const refeicao = await refeicaoRepository.findOne({ where: { pessoa: { id: data.pessoa.id }, tipoRefeicao: { id: data.tipoRefeicao.id }, data_refeicao: data.data_refeicao }, relations: ['tipoRefeicao'] });        return refeicao;
+        const refeicao = await refeicaoRepository.findOne({ where: { pessoa: { id: data.pessoa.id }, tipoRefeicao: { id: data.tipoRefeicao.id }, data_refeicao: data.data_refeicao }, relations: ['tipoRefeicao', 'alimento'] });
+        return refeicao;
     }
 
     async getAllRefeicao(data: Refeicao): Promise<Refeicao[]> {
         const refeicaoRepository = getRepository(Refeicao);
-        const refeicao = await refeicaoRepository.find({ where: { pessoa: { id: data.pessoa.id }, data_refeicao: data.data_refeicao }, relations: ['tipoRefeicao'] });
+        const refeicao = await refeicaoRepository.find({ where: { pessoa: { id: data.pessoa.id }, data_refeicao: data.data_refeicao }, relations: ['tipoRefeicao', 'alimento'] });
         return refeicao;
     }
 
@@ -28,7 +29,7 @@ export class RefeicaoRepository implements IRefeicaoRepository {
 
         await refeicaoRepository.update({ id }, data)
 
-        const refeicao = await refeicaoRepository.findOne(data);
+        const refeicao = await refeicaoRepository.findOne({where:{data},  relations: ['tipoRefeicao', 'alimento']});
 
         return refeicao
     }
