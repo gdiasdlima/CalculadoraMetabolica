@@ -41,4 +41,9 @@ export class RefeicaoRepository implements IRefeicaoRepository {
 
         return refeicao
     }
+
+    async delete(data: Refeicao): Promise<void> {
+        const refeicaoRepository = getRepository(Refeicao)
+        await refeicaoRepository.delete(data)
+    }
 }

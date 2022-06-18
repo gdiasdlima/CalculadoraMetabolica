@@ -1,5 +1,5 @@
-import { Refeicao } from "../../data/entities/refeicao";
+import { DeleteRefeicalmodel } from "../models/deleteRefeicaoModel";
 
 export interface DeleteRefeicaoUseCase {
-    delete(data: Refeicao): Promise<any>
+    delete(data: DeleteRefeicalmodel): Promise<any>
 }

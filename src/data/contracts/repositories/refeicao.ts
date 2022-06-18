@@ -6,4 +6,5 @@ export interface IRefeicaoRepository {
     findByID(data: number) : Promise<Refeicao>;
     getAllRefeicao(data: Refeicao) : Promise<Refeicao[]>;
     update(data: Refeicao): Promise<Refeicao>;
+    delete(data: Refeicao): Promise<void>
 }
