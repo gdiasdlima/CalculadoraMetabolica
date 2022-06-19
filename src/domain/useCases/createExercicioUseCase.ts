@@ -1,5 +1,5 @@
-import { Exercicio } from "../../data/entities/exercicio";
+import { ExercicioModel } from "../models/exercicioModel";
 
 export interface CreateExercicioUseCase {
-    create(data: Exercicio): Promise<any>
+    create(data: ExercicioModel): Promise<any>
 }
