@@ -18,7 +18,7 @@ import {
   deleteExercicioPath,
   getExercicioPath,
   getAllExercicioPath,
-  updateExercicioPath
+  updateExercicioPath,
 
 } from './paths/'
 
