@@ -5,7 +5,6 @@ import { IExercicioRepository } from "../contracts/repositories/exercicio";
 import { IPessoaRepository } from "../contracts/repositories/pessoa";
 import { ITipoExercicioRepository } from "../contracts/repositories/Tipoexercicio";
 import { Exercicio } from "../entities/exercicio";
-import { Objetivo } from "../entities/objetivo";
 import { Pessoa } from "../entities/pessoa";
 import { TipoExercicio } from "../entities/tipoExercicio";
 
