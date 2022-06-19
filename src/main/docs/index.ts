@@ -31,6 +31,9 @@ export default {
     },
     {
         name: 'Pessoa'
+    },
+    {
+        name: 'Tipo Exercicio'
     }
 ],
 paths,
