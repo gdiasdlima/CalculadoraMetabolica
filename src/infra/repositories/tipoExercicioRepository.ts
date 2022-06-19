@@ -1,6 +1,6 @@
 import { getRepository } from "typeorm";
 import { ITipoExercicioRepository } from "../../data/contracts/repositories/Tipoexercicio";
-import { TipoExercicio } from "../../data/entities/exercicio";
+import { TipoExercicio } from "../../data/entities/tipoExercicio";
 
 export class TipoExercicioRepository implements ITipoExercicioRepository {
 

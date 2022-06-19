@@ -1,4 +1,4 @@
-import { TipoExercicio } from "../../entities/exercicio";
+import { TipoExercicio } from "../../entities/tipoExercicio";
 
 export interface ITipoExercicioRepository {
     create(data: TipoExercicio): Promise<TipoExercicio>
