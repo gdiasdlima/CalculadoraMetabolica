@@ -2,12 +2,12 @@ import { Controller } from '../contracts/controller'
 import { HttpRequest, HttpResponse } from '../contracts/http';
 import { badRequest, success, serverError } from '../contracts/httpHelper'
 import { Validator } from '../../validation/validator';
-import { DeleteRefeicaoUseCase } from '../../domain/useCases/deleteRefeicaoUseCase';
+import { DeleteExercicioUseCase } from '../../domain/useCases/deleteExercicioUseCase';
 
-export class DeleteRefeicaoController implements Controller {
+export class DeleteExercicioController implements Controller {
     constructor(
         private readonly validator: Validator,
-        private readonly deleteRefeicaoUseCase: DeleteRefeicaoUseCase
+        private readonly deleteExercicioUseCase: DeleteExercicioUseCase
     ) {
 
     }
@@ -18,16 +18,8 @@ export class DeleteRefeicaoController implements Controller {
             if (error) {
                 return badRequest(error)
             }
-            const { idPessoa, idRefeicao, idTipoRefeicao, dataRefeicao } = httpRequest.body
-           
-            const refeicao = await this.deleteRefeicaoUseCase.delete(
-                {
-                    idPessoa,
-                    idRefeicao, 
-                    idTipoRefeicao, 
-                    dataRefeicao
-                }
-            )
+            const { id } = httpRequest.body
+            const refeicao = await this.deleteExercicioUseCase.delete(id)
 
             return success(refeicao)
         }
