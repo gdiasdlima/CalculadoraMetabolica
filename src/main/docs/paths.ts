@@ -14,7 +14,8 @@ import {
   updateRefeicaoPath,
   deleteRefeicaoPath,
   getAllTipoExercicioPath,
-  createExercicioPath,
+  createExercicioPath, 
+  deleteExercicioPath,
 
 } from './paths/'
 
@@ -34,6 +35,8 @@ export default {
   '/refeicao/delete': deleteRefeicaoPath,
   '/refeicao/update': updateRefeicaoPath,
   '/tipoExercicio/getAll': getAllTipoExercicioPath,
-  '/exercicio/create': createExercicioPath
+  '/exercicio/create': createExercicioPath,
+  '/exercicio/delete': deleteExercicioPath,
+  
 
 }
