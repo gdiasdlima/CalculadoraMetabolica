@@ -1,4 +1,3 @@
-import { Pessoa } from "../../data/entities/pessoa";
 import { UpdatePessoaModel } from "../models/UpdatePessoaModel";
 
 export interface UpdatePessoaUseCase {
