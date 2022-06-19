@@ -1,4 +1,5 @@
 export interface ExercicioModel {
+    id: number
     idPessoa: number
     idTipoExercicio: number
     kcalGastas: number

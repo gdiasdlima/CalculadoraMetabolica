@@ -1,5 +1,5 @@
-import { Exercicio } from "../../data/entities/exercicio";
+import { ExercicioModel } from "../models/exercicioModel";
 
 export interface UpdateExercicioUseCase {
-    update(data: Exercicio): Promise<any>
+    update(data: ExercicioModel): Promise<any>
 }
