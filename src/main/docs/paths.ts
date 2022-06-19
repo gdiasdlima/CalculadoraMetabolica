@@ -16,6 +16,7 @@ import {
   getAllTipoExercicioPath,
   createExercicioPath, 
   deleteExercicioPath,
+  getExercicioPath,
 
 } from './paths/'
 
@@ -37,6 +38,7 @@ export default {
   '/tipoExercicio/getAll': getAllTipoExercicioPath,
   '/exercicio/create': createExercicioPath,
   '/exercicio/delete': deleteExercicioPath,
-  
+  '/exercicio/get': getExercicioPath
+
 
 }
