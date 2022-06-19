@@ -6,7 +6,6 @@ import { DeleteExercicioUseCase } from '../../domain/useCases/deleteExercicioUse
 
 export class DeleteExercicioController implements Controller {
     constructor(
-        private readonly validator: Validator,
         private readonly deleteExercicioUseCase: DeleteExercicioUseCase
     ) {
 
@@ -14,10 +13,7 @@ export class DeleteExercicioController implements Controller {
 
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
-            const error = this.validator.validate(httpRequest.body)
-            if (error) {
-                return badRequest(error)
-            }
+
             const { id } = httpRequest.body
             const refeicao = await this.deleteExercicioUseCase.delete(id)
 
