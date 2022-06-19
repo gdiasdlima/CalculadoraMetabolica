@@ -5,7 +5,7 @@ import { TipoExercicioRepository } from "../../../infra/repositories/tipoExercic
 import { UpdateExercicioController } from "../../../presentation/controllers/updateExercicioController"
 import { makeGetAllExercicioValidator } from "../validations/getAllExercicioControllerFactory"
 
-export const makeCreateExercicioControllerFactory = (): UpdateExercicioController => {
+export const MakeUpdateExercicioControllerFactory = (): UpdateExercicioController => {
     const pessoaRepository = new PessoaRepository()
     const exercicioRepository = new ExercicioRepository()
     const tipoRepository = new TipoExercicioRepository()
