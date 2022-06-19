@@ -1,13 +1,9 @@
-import { networkInterfaces } from "os";
-import { CreateRefeicaoModel } from "../../domain/models/createRefeicaoModel";
 import { ExercicioModel } from "../../domain/models/exercicioModel";
 import { CreateExercicioUseCase } from "../../domain/useCases/createExercicioUseCase";
 import { ExercicioRepository } from "../../infra/repositories/exercicioRepository";
-import { RefeicaoRepository } from "../../infra/repositories/refeicaoRepository";
 import { NotFoundError } from "../../presentation/errors/notFoundError";
 import { IPessoaRepository } from "../contracts/repositories/pessoa";
 import { ITipoExercicioRepository } from "../contracts/repositories/Tipoexercicio";
-import { Alimento } from "../entities/alimento";
 import { Exercicio } from "../entities/exercicio";
 import { Pessoa } from "../entities/pessoa";
 import { TipoExercicio } from "../entities/tipoExercicio";

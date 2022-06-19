@@ -1,4 +1,3 @@
-import { response } from "express";
 import { GetAllRefeicaoModel } from "../../domain/models/getAllRefeicaoModel";
 import { GetAllRefeicaoUseCase } from "../../domain/useCases/getAllRefeicaoUseCase";
 import { RefeicaoRepository } from "../../infra/repositories/refeicaoRepository";
@@ -28,9 +27,9 @@ export class GetAllRefeicaoService implements GetAllRefeicaoUseCase {
         refeicao.pessoa = new Pessoa()
         refeicao.pessoa.id = data.idPessoa
         refeicao.data_refeicao = data.dataRefeicao
-        const reponse = await this.refeicaoRepository.getAllRefeicao(refeicao)
+        const response = await this.refeicaoRepository.getAllRefeicao(refeicao)
         console.log(response)
-        return reponse
+        return response
 
     }
 

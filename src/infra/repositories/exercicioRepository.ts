@@ -24,7 +24,7 @@ export class ExercicioRepository implements IExercicioRepository {
 
     async getAll(data: Exercicio): Promise<Exercicio[]> {
         const exercicioRepository = getRepository(Exercicio);
-        const exercicio = await exercicioRepository.find({ where: { pessoa: { id: data.pessoa.id }, tipoExercicio: { id: data.tipoExercicio.id }, data_exercicio: data.data_exercicio }, relations: ['tipoExercicio'] });
+        const exercicio = await exercicioRepository.find({ where: { pessoa: { id: data.pessoa.id }, data_exercicio: data.data_exercicio }, relations: ['tipoExercicio'] });
         return exercicio;
     }
 

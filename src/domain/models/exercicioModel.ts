@@ -3,4 +3,5 @@ export interface ExercicioModel {
     idTipoExercicio: number
     kcalGastas: number
     tempo: number
+    dataExercicio: Date
 }
