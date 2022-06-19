@@ -4,7 +4,7 @@ import { badRequest, success, serverError } from '../contracts/httpHelper'
 import { Validator } from '../../validation/validator';
 import { UpdateExercicioUseCase } from '../../domain/useCases/updateExercicioUseCase';
 
-export class UpdatExercicioController implements Controller {
+export class UpdateExercicioController implements Controller {
     constructor(
         private readonly validator: Validator,
         private readonly updateRefeicaoUseCase: UpdateExercicioUseCase
