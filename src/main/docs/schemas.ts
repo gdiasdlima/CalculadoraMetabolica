@@ -6,7 +6,8 @@ import {
   CreateRefeicaoParamsSchema,
   UpdatePessoaParamsSchema,
   UpdateRefeicaoParamsSchema,
-  DeleteRefeicaoParamsSchema
+  DeleteRefeicaoParamsSchema,
+  CreateExerciciosParamsSchema,
 } from './schemas/'
 
 export default {
@@ -17,5 +18,6 @@ export default {
   createRefeicaoParams: CreateRefeicaoParamsSchema,
   updatePessoaParams: UpdatePessoaParamsSchema,
   updateRefeicaoParams: UpdateRefeicaoParamsSchema,
-  deleteRefeicaoParams: DeleteRefeicaoParamsSchema
+  deleteRefeicaoParams: DeleteRefeicaoParamsSchema,
+  createExercicioParams: CreateExerciciosParamsSchema
 }
