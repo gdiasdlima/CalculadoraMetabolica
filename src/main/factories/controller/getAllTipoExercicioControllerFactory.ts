@@ -2,7 +2,7 @@ import { GetAllTipoExercicioService } from "../../../data/services/getAllTipoExe
 import { TipoExercicioRepository } from "../../../infra/repositories/tipoExercicioRepository"
 import { GetAllTipoExercicioController } from "../../../presentation/controllers/getAllTipoExercicioController"
 
-export const MakeGetAllTipoConquistaController = (): GetAllTipoExercicioController => {
+export const MakeGetAllTipoExercicioController = (): GetAllTipoExercicioController => {
     const tipoExercicioRepository = new TipoExercicioRepository()
     const getAllTipoExercicioService = new GetAllTipoExercicioService(tipoExercicioRepository)
     return new GetAllTipoExercicioController(getAllTipoExercicioService)
