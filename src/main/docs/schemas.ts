@@ -4,7 +4,9 @@ import {
   FichaMetabolicaParamsSchema,
   GetRefeicaoParamsSchema,
   CreateRefeicaoParamsSchema,
-  UpdatePessoaParamsSchema
+  UpdatePessoaParamsSchema,
+  UpdateRefeicaoParamsSchema,
+  DeleteRefeicaoParamsSchema
 } from './schemas/'
 
 export default {
@@ -13,5 +15,7 @@ export default {
   fichaMetabolicaParams: FichaMetabolicaParamsSchema,
   getRefeicaoParams: GetRefeicaoParamsSchema,
   createRefeicaoParams: CreateRefeicaoParamsSchema,
-  updatePessoaParams: UpdatePessoaParamsSchema
+  updatePessoaParams: UpdatePessoaParamsSchema,
+  updateRefeicaoParams: UpdateRefeicaoParamsSchema,
+  deleteRefeicaoParams: DeleteRefeicaoParamsSchema
 }

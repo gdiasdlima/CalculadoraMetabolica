@@ -16,10 +16,11 @@ export class DeleteRefeicaoService implements DeleteRefeicaoUseCase {
         if (!alreadyExist) {
             return new NotFoundError('Refeicao')
         }
-        const AlreadyPessoa = await this.pessoaRepository.findByID(data.idPessoa)
-        if (!AlreadyPessoa) {
-            return new NotFoundError('Pessoa')
-        }
+        console.log(data)
+        // const AlreadyPessoa = await this.pessoaRepository.findByID(data.idPessoa)
+        // if (!AlreadyPessoa) {
+        //     return new NotFoundError('Pessoa')
+        // }
         const refeicao = new Refeicao()
         refeicao.pessoa = new Pessoa()
         refeicao.tipoRefeicao = new TipoRefeicao()
@@ -27,6 +28,6 @@ export class DeleteRefeicaoService implements DeleteRefeicaoUseCase {
         refeicao.tipoRefeicao.id = data.idTipoRefeicao
         refeicao.data_refeicao = data.dataRefeicao
         refeicao.id = data.idRefeicao
-        await this.refeicaoRepository.delete(refeicao)
+        await this.refeicaoRepository.delete(data.idRefeicao)
     }
 }

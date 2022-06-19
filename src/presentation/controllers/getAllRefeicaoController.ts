@@ -27,6 +27,7 @@ export class GetAllRefeicaoController implements Controller {
             return success(refeicao)
 
         } catch (error) {
+            console.log(error)
             return serverError()
         }
     }

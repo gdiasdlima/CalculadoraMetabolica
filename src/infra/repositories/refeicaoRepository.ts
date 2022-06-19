@@ -19,7 +19,7 @@ export class RefeicaoRepository implements IRefeicaoRepository {
 
     async findByID(id: number): Promise<Refeicao> {
         const refeicaoRepository = getRepository(Refeicao);
-        const refeicao = await refeicaoRepository.findOne({ where: { id }, relations: ['TipoRefeicao']});
+        const refeicao = await refeicaoRepository.findOne({ where: { id }, relations: ['tipoRefeicao']});
 
         return refeicao;
     }
@@ -37,13 +37,13 @@ export class RefeicaoRepository implements IRefeicaoRepository {
 
         await refeicaoRepository.update({ id }, data)
 
-        const refeicao = await refeicaoRepository.findOne({where:{data},  relations: ['tipoRefeicao', 'alimento']});
+        const refeicao = await refeicaoRepository.findOne({where:{id},  relations: ['tipoRefeicao', 'alimento']});
 
         return refeicao
     }
 
-    async delete(data: Refeicao): Promise<void> {
+    async delete(id: number): Promise<void> {
         const refeicaoRepository = getRepository(Refeicao)
-        await refeicaoRepository.delete(data)
+        await refeicaoRepository.delete(id)
     }
 }

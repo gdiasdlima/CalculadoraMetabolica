@@ -74,6 +74,10 @@ export class SignUpService implements SignUpUseCase {
 
         }
 
+
+        // Cálculo para Homens: MB = Taxa de atividade x {66 + [(13,7 x Peso(kg)) + ( 5 x Altura(cm)) - (6,8 x Idade(anos))]}
+        // Cálculo para Mulheres: MB = Taxa de atividade x {655 + [(9,6 x Peso(kg)) + (1,8 x Altura(cm)) - (4,7 x Idade(anos))]}
+
         switch (data.atividadeFisica) {
             case 1:
                 ndc = tmb * 1.2

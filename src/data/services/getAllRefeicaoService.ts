@@ -1,3 +1,4 @@
+import { response } from "express";
 import { GetAllRefeicaoModel } from "../../domain/models/getAllRefeicaoModel";
 import { GetAllRefeicaoUseCase } from "../../domain/useCases/getAllRefeicaoUseCase";
 import { RefeicaoRepository } from "../../infra/repositories/refeicaoRepository";
@@ -17,7 +18,7 @@ export class GetAllRefeicaoService implements GetAllRefeicaoUseCase {
     ) { }
 
     async getAll(data: GetAllRefeicaoModel): Promise<any> {
-
+        console.log(data)
         const pessoa = await this.pessoaRepository.findByID(data.idPessoa);
         if (!pessoa) {
             return new UnauthorizedError()
@@ -28,6 +29,7 @@ export class GetAllRefeicaoService implements GetAllRefeicaoUseCase {
         refeicao.pessoa.id = data.idPessoa
         refeicao.data_refeicao = data.dataRefeicao
         const reponse = await this.refeicaoRepository.getAllRefeicao(refeicao)
+        console.log(response)
         return reponse
 
     }

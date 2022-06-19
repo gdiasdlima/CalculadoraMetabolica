@@ -16,6 +16,5 @@ export const DeleteRefeicaoParamsSchema = {
       },
 
     },
-    required: ['idPessoa', 'idTipoRefeicao', 'dataRefeicao']
   }
   

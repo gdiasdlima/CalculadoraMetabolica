@@ -35,13 +35,15 @@ export class UpdateRefeicaoService implements UpdateRefeicaoUseCase {
         refeicao.pessoa = new Pessoa()
         refeicao.pessoa.id = data.idPessoa
         refeicao.id = data.idRefeicao
+        refeicao.kcal = data.kcal ? data.kcal : AlreadyRefeicao.kcal
+        refeicao.tipoRefeicao.id = data.idTipoRefeicao ? data.idTipoRefeicao : AlreadyRefeicao.tipoRefeicao.id
         refeicao.carb = data.carb ? data.carb : AlreadyRefeicao.carb
         refeicao.proteina = data.proteina ? data.proteina : AlreadyRefeicao.proteina
         refeicao.gordura = data.gordura ? data.gordura : AlreadyRefeicao.gordura
         refeicao.gramas = data.gramas ? data.gramas : AlreadyRefeicao.gramas
         refeicao.data_refeicao = data.dataRefeicao ? data.dataRefeicao : AlreadyRefeicao.data_refeicao
         const response = await this.refeicaoRepository.update(refeicao)
-
+        console.log(response)
         return response
     }
 }
