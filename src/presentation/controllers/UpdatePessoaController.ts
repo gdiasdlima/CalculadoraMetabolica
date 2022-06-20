@@ -14,7 +14,6 @@ export class UpdatePessoaController implements Controller {
 
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
-            console.log('oi')
             const error = this.validator.validate(httpRequest.body)
             if (error) {
                 return badRequest(error)
@@ -22,7 +21,6 @@ export class UpdatePessoaController implements Controller {
             const { nome, idPessoa, pesoAtual, dataNascimento, sexo, objetivo, pesoObj } = httpRequest.body
 
            
-            console.log(idPessoa, pesoAtual, pesoObj)
             const pessoa = await this.updatePessoaUseCase.update(
                 {
                     idPessoa,
@@ -38,7 +36,6 @@ export class UpdatePessoaController implements Controller {
             return success(pessoa)
         }
         catch (error) {
-            console.log(error)
             return serverError()
         }
     }

@@ -37,7 +37,6 @@ export class UpdateRefeicaoController implements Controller {
             return success(refeicao)
         }
         catch (error) {
-            console.log(error)
             return serverError()
         }
     }

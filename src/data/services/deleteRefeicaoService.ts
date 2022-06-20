@@ -16,11 +16,6 @@ export class DeleteRefeicaoService implements DeleteRefeicaoUseCase {
         if (!alreadyExist) {
             return new NotFoundError('Refeicao')
         }
-        console.log(data)
-        // const AlreadyPessoa = await this.pessoaRepository.findByID(data.idPessoa)
-        // if (!AlreadyPessoa) {
-        //     return new NotFoundError('Pessoa')
-        // }
         const refeicao = new Refeicao()
         refeicao.pessoa = new Pessoa()
         refeicao.tipoRefeicao = new TipoRefeicao()

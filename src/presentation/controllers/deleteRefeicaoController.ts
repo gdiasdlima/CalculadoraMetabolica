@@ -32,7 +32,6 @@ export class DeleteRefeicaoController implements Controller {
             return success(refeicao)
         }
         catch (error) {
-            console.log(error)
             return serverError()
         }
     }

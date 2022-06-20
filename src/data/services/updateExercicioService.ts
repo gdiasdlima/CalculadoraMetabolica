@@ -18,7 +18,9 @@ export class UpdateExercicioService implements UpdateExercicioUseCase {
     ) { }
 
     async update(data: ExercicioModel): Promise<any> {
-        
+        console.log('alooooooooooooooo')
+
+        console.log(data)
         const alreadyExist = await this.exercicioRepository.findByID(data.id);
         if (!alreadyExist) {
             return new NotFoundError('Exercicio');
@@ -43,6 +45,7 @@ export class UpdateExercicioService implements UpdateExercicioUseCase {
         exercicio.kcal_gastas = data.kcalGastas ? data.kcalGastas : alreadyExist.kcal_gastas
         exercicio.tempo = data.tempo ? data.tempo : alreadyExist.tempo
        
+        console.log(exercicio)
         const response = await this.exercicioRepository.update(exercicio)
 
         return response

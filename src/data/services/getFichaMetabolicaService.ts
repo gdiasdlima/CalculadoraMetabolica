@@ -20,7 +20,6 @@ export class GetFichaMetabolicaService implements GetFichaMetabolicaUseCase {
         }
 
         const ficha = await this.fichaRepository.findByIDPessoa(pessoa.id)
-        // console.log(ficha)
         return ficha
     }
     

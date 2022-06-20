@@ -14,7 +14,6 @@ export class GetAllExercicioService implements GetAllExercicioUseCase {
     ) { }
 
     async getAll(data: ExercicioModel): Promise<any> {
-        console.log(data)
 
         const pessoa = await this.pessoaRepository.findByID(data.idPessoa);
         if (!pessoa) {
@@ -26,7 +25,6 @@ export class GetAllExercicioService implements GetAllExercicioUseCase {
         exercicio.pessoa.id = data.idPessoa
         exercicio.data_exercicio = data.dataExercicio
         const response = await this.exercicioRepository.getAll(exercicio)
-        console.log(response)
         return response
 
     }

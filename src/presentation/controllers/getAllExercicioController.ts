@@ -27,7 +27,6 @@ export class GetAllExercicioController implements Controller {
             return success(exercicio)
 
         } catch (error) {
-            console.log(error)
             return serverError()
         }
     }

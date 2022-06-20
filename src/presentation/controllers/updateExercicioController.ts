@@ -7,20 +7,21 @@ import { UpdateExercicioUseCase } from '../../domain/useCases/updateExercicioUse
 export class UpdateExercicioController implements Controller {
     constructor(
         private readonly validator: Validator,
-        private readonly updateRefeicaoUseCase: UpdateExercicioUseCase
+        private readonly updateExercicioUseCase: UpdateExercicioUseCase
     ) {
 
     }
 
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
+            console.log('aloooooooooooo')
             const error = this.validator.validate(httpRequest.body)
             if (error) {
                 return badRequest(error)
             }
             const { idPessoa, dataExercicio, id, idTipoExercicio, kcalGastas, tempo } = httpRequest.body
 
-            const exercicio = await this.updateRefeicaoUseCase.update({ idPessoa, dataExercicio, id, idTipoExercicio, kcalGastas, tempo })
+            const exercicio = await this.updateExercicioUseCase.update({ idPessoa, dataExercicio, id, idTipoExercicio, kcalGastas, tempo })
 
             return success(exercicio)
         }

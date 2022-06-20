@@ -19,7 +19,6 @@ export class CreateExercicioService implements CreateExercicioUseCase {
 
     async create(data: ExercicioModel): Promise<any> {
         
-        console.log(data)
         const pessoa = await this.pessoaRepository.findByID(data.idPessoa);
         if (!pessoa) {
             return new NotFoundError('pessoa')
@@ -39,7 +38,6 @@ export class CreateExercicioService implements CreateExercicioUseCase {
         exercicio.tempo = data.tempo
         exercicio.data_exercicio = new Date()
         const response = await this.exercicioRepository.create(exercicio)
-
         return response
     }
 
